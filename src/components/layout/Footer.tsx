@@ -1,6 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import { Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Linkedin, Twitter, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 
 const footerLinks = {
@@ -8,18 +8,15 @@ const footerLinks = {
     { name: "Hakkımızda", href: "/hakkimizda" },
     { name: "Ekibimiz", href: "/ekibimiz" },
     { name: "Kariyer", href: "/kariyer" },
-    { name: "Haberler", href: "/haberler" },
   ],
   hizmetler: [
     { name: "SAP S/4HANA", href: "/hizmetler#s4hana" },
     { name: "ABAP Geliştirme", href: "/hizmetler#abap" },
-    { name: "Fiori Uygulamaları", href: "/hizmetler#fiori" },
-    { name: "Migration Hizmetleri", href: "/hizmetler#migration" },
+    { name: "Fiori & UI5", href: "/hizmetler#fiori" },
   ],
-  iletisim: [
+  destek: [
     { name: "İletişim", href: "/iletisim" },
-    { name: "Destek", href: "/destek" },
-    { name: "SSS", href: "/sss" },
+    { name: "Blog", href: "/blog" },
     { name: "Gizlilik Politikası", href: "/gizlilik" },
   ],
 };
@@ -39,55 +36,59 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300">
+    <footer className="bg-[#0a0a0f] border-t border-zinc-800/50 relative overflow-hidden">
+      {/* Gradient Top Border */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+
       <Container>
-        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Şirket Bilgileri */}
-          <div className="lg:col-span-1">
-            <h3 className="text-white text-xl font-bold mb-4">Aerisap</h3>
-            <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-              15 yılı aşkın SAP ve ABAP deneyimi ile kurumsal çözümler sunan
-              önde gelen danışmanlık firması.
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+          {/* Logo & Description */}
+          <div className="lg:col-span-2">
+            <Link href="/" className="inline-block mb-4">
+              <span className="text-2xl font-bold text-gradient">Aerisap</span>
+            </Link>
+            <p className="text-zinc-500 text-sm mb-6 leading-relaxed max-w-xs">
+              SAP & ABAP danışmanlık hizmetleri. S/4HANA migration,
+              ABAP geliştirme ve Fiori uygulamaları.
             </p>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-sky-500 mt-0.5 flex-shrink-0" />
-                <span className="text-slate-400">
-                  İstanbul, Türkiye
-                </span>
+
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+                <MapPin className="h-4 w-4 text-indigo-500" />
+                <span>İstanbul, Türkiye</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-sky-500 flex-shrink-0" />
-                <a
-                  href="tel:+902121234567"
-                  className="text-slate-400 hover:text-sky-400 transition-colors"
-                >
-                  +90 (212) 123 45 67
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-sky-500 flex-shrink-0" />
-                <a
-                  href="mailto:info@aerisap.com"
-                  className="text-slate-400 hover:text-sky-400 transition-colors"
-                >
-                  info@aerisap.com
-                </a>
-              </div>
+              <a
+                href="tel:+902121234567"
+                className="flex items-center gap-3 text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
+              >
+                <Phone className="h-4 w-4 text-indigo-500" />
+                <span>+90 (212) 123 45 67</span>
+              </a>
+              <a
+                href="mailto:info@aerisap.com"
+                className="flex items-center gap-3 text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
+              >
+                <Mail className="h-4 w-4 text-indigo-500" />
+                <span>info@aerisap.com</span>
+              </a>
             </div>
           </div>
 
           {/* Şirket */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Şirket</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+              Şirket
+            </h4>
             <ul className="space-y-3">
               {footerLinks.sirket.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-sky-400 transition-colors text-sm"
+                    className="text-zinc-500 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"
                   >
                     {link.name}
+                    <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
               ))}
@@ -96,67 +97,72 @@ export default function Footer() {
 
           {/* Hizmetler */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Hizmetlerimiz</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+              Hizmetler
+            </h4>
             <ul className="space-y-3">
               {footerLinks.hizmetler.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-sky-400 transition-colors text-sm"
+                    className="text-zinc-500 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"
                   >
                     {link.name}
+                    <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* İletişim & Sosyal */}
+          {/* Destek */}
           <div>
-            <h4 className="text-white font-semibold mb-4">İletişim</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+              Destek
+            </h4>
             <ul className="space-y-3 mb-6">
-              {footerLinks.iletisim.map((link) => (
+              {footerLinks.destek.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-sky-400 transition-colors text-sm"
+                    className="text-zinc-500 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group"
                   >
                     {link.name}
+                    <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>
               ))}
             </ul>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Sosyal Medya</h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-400 hover:text-sky-400 transition-colors"
-                      aria-label={social.name}
-                    >
-                      <Icon className="h-5 w-5" />
-                    </a>
-                  );
-                })}
-              </div>
+
+            {/* Social Links */}
+            <div className="flex gap-3">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-lg glass flex items-center justify-center text-zinc-500 hover:text-white hover:border-zinc-700 transition-all"
+                    aria-label={social.name}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-slate-800 py-8 mt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-slate-400 text-sm">
+        <div className="border-t border-zinc-800/50 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-zinc-600">
+            <p>
               © {new Date().getFullYear()} Aerisap. Tüm hakları saklıdır.
             </p>
-            <p className="text-slate-500 text-sm">
-              SAP ve diğer SAP ürün ve hizmetleri SAP SE'nin ticari markalarıdır.
+            <p>
+              SAP® ve diğer SAP ürünleri SAP SE'nin ticari markalarıdır.
             </p>
           </div>
         </div>
@@ -164,4 +170,3 @@ export default function Footer() {
     </footer>
   );
 }
-

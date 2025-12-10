@@ -4,10 +4,8 @@ import * as React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar, ArrowUpRight, Clock } from "lucide-react";
 import Container from "@/components/ui/Container";
-import Section from "@/components/ui/Section";
-import { Card, CardContent } from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import { getRecentPosts } from "@/lib/blog-data";
 
@@ -18,81 +16,96 @@ export default function LatestBlog() {
   });
   const posts = getRecentPosts(3);
 
+  const categoryColors: Record<string, string> = {
+    "S/4HANA": "from-indigo-500 to-purple-500",
+    "ABAP": "from-purple-500 to-pink-500",
+    "Fiori": "from-amber-500 to-orange-500",
+    "Cloud": "from-cyan-500 to-blue-500",
+  };
+
   return (
-    <Section spacing="lg" background="slate">
+    <section className="py-24 bg-[#12121a] relative">
       <Container>
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            Son Blog Yazılarımız
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            SAP dünyasındaki son gelişmeler, ipuçları ve en iyi uygulamalar
-            hakkında yazılarımızı keşfedin.
-          </p>
+          <div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-2">
+              Blog
+            </h2>
+            <p className="text-lg text-zinc-400">
+              SAP dünyasından güncel içerikler
+            </p>
+          </div>
+          <Button
+            asChild
+            href="/blog"
+            variant="outline"
+            className="border-zinc-700 text-zinc-300 hover:bg-zinc-800/50"
+          >
+            Tümünü Gör
+          </Button>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post, index) => (
-            <motion.div
+            <motion.article
               key={post.slug}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group"
             >
-              <Card hover className="h-full flex flex-col">
-                <CardContent className="p-6 flex flex-col flex-1">
+              <Link href={`/blog/${post.slug}`} className="block h-full">
+                <div className="h-full glass rounded-2xl p-6 hover:border-zinc-700 transition-all duration-300 flex flex-col">
+                  {/* Category Badge */}
                   <div className="mb-4">
-                    <span className="inline-block px-3 py-1 text-xs font-medium bg-sky-100 text-sky-700 rounded-full">
+                    <span className={`
+                      inline-block px-3 py-1 text-xs font-medium rounded-full
+                      bg-gradient-to-r ${categoryColors[post.category] || 'from-zinc-600 to-zinc-500'}
+                      text-white
+                    `}>
                       {post.category}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3 line-clamp-2">
+
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-gradient transition-all duration-300 line-clamp-2">
                     {post.title}
                   </h3>
-                  <p className="text-slate-600 mb-4 line-clamp-3 flex-1">
+
+                  {/* Excerpt */}
+                  <p className="text-zinc-400 text-sm mb-4 flex-1 line-clamp-2">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-200">
-                    <div className="flex items-center text-sm text-slate-500">
-                      <Calendar className="h-4 w-4 mr-2" />
-                      {new Date(post.date).toLocaleDateString("tr-TR", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
+
+                  {/* Meta */}
+                  <div className="flex items-center justify-between pt-4 border-t border-zinc-800">
+                    <div className="flex items-center gap-4 text-xs text-zinc-500">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="h-3 w-3" />
+                        {new Date(post.date).toLocaleDateString("tr-TR", {
+                          day: "numeric",
+                          month: "short",
+                        })}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="h-3 w-3" />
+                        {post.readTime}
+                      </span>
                     </div>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="inline-flex items-center text-sky-500 hover:text-sky-600 font-medium text-sm transition-colors"
-                    >
-                      Devamını Oku
-                      <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
+                    <ArrowUpRight className="h-4 w-4 text-zinc-500 group-hover:text-indigo-400 transition-colors" />
                   </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+                </div>
+              </Link>
+            </motion.article>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center"
-        >
-          <Button asChild href="/blog" variant="primary" size="lg">
-            Tüm Blog Yazılarını Görün
-          </Button>
-        </motion.div>
       </Container>
-    </Section>
+    </section>
   );
 }
-

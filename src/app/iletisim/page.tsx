@@ -58,27 +58,29 @@ export default function ContactPage() {
 
   return (
     <>
-      <Section spacing="xl" background="default" className="pt-32">
-        <Container>
+      <Section spacing="xl" background="primary" className="pt-32 relative overflow-hidden">
+        {/* Decorative BG */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[150px]" />
+
+        <Container className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              İletişime Geçin
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              İletişime <span className="text-gradient">Geçin</span>
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
+            <p className="text-xl text-zinc-400 leading-relaxed">
               SAP projeleriniz için ücretsiz danışmanlık ve özel teklif almak
-              için bizimle iletişime geçin. Ekibimiz en kısa sürede size
-              dönüş yapacaktır.
+              için bizimle iletişime geçin.
             </p>
           </motion.div>
         </Container>
       </Section>
 
-      <Section spacing="lg" background="white">
+      <Section spacing="lg" background="secondary">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* İletişim Bilgileri */}
@@ -89,25 +91,25 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <Card>
-                <CardContent className="p-6">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-6">
+              <Card gradient className="bg-[#16161f] border-zinc-800">
+                <CardContent className="p-8">
+                  <h2 className="text-2xl font-bold text-white mb-8">
                     İletişim Bilgileri
                   </h2>
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
-                        <div className="h-12 w-12 rounded-lg bg-sky-100 flex items-center justify-center">
-                          <Phone className="h-6 w-6 text-sky-600" />
+                        <div className="h-12 w-12 rounded-xl bg-indigo-500/10 flex items-center justify-center">
+                          <Phone className="h-6 w-6 text-indigo-500" />
                         </div>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-slate-900 mb-1">
+                        <h3 className="font-semibold text-white mb-1">
                           Telefon
                         </h3>
                         <a
                           href="tel:+902121234567"
-                          className="text-slate-600 hover:text-sky-500 transition-colors"
+                          className="text-zinc-400 hover:text-indigo-400 transition-colors"
                         >
                           +90 (212) 123 45 67
                         </a>
@@ -116,17 +118,17 @@ export default function ContactPage() {
 
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
-                        <div className="h-12 w-12 rounded-lg bg-sky-100 flex items-center justify-center">
-                          <Mail className="h-6 w-6 text-sky-600" />
+                        <div className="h-12 w-12 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                          <Mail className="h-6 w-6 text-purple-500" />
                         </div>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-slate-900 mb-1">
+                        <h3 className="font-semibold text-white mb-1">
                           E-posta
                         </h3>
                         <a
                           href="mailto:info@aerisap.com"
-                          className="text-slate-600 hover:text-sky-500 transition-colors"
+                          className="text-zinc-400 hover:text-purple-400 transition-colors"
                         >
                           info@aerisap.com
                         </a>
@@ -135,15 +137,15 @@ export default function ContactPage() {
 
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
-                        <div className="h-12 w-12 rounded-lg bg-sky-100 flex items-center justify-center">
-                          <MapPin className="h-6 w-6 text-sky-600" />
+                        <div className="h-12 w-12 rounded-xl bg-amber-500/10 flex items-center justify-center">
+                          <MapPin className="h-6 w-6 text-amber-500" />
                         </div>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-slate-900 mb-1">
+                        <h3 className="font-semibold text-white mb-1">
                           Adres
                         </h3>
-                        <p className="text-slate-600">
+                        <p className="text-zinc-400">
                           İstanbul, Türkiye
                         </p>
                       </div>
@@ -153,22 +155,19 @@ export default function ContactPage() {
               </Card>
 
               {/* Harita */}
-              <Card>
-                <CardContent className="p-0">
-                  <div className="h-64 w-full bg-slate-200 rounded-lg overflow-hidden">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.1453718876!2d28.9784!3d41.0082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAwJzI5LjUiTiAyOMKwNTgnNDIuMiJF!5e0!3m2!1str!2str!4v1234567890123!5m2!1str!2str"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Aerisap Ofis Konumu"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="h-64 w-full rounded-2xl overflow-hidden border border-zinc-800 grayscale hover:grayscale-0 transition-all duration-500">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.1453718876!2d28.9784!3d41.0082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAwJzI5LjUiTiAyOMKwNTgnNDIuMiJF!5e0!3m2!1str!2str!4v1234567890123!5m2!1str!2str"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Aerisap Ofis Konumu"
+                  className="opacity-80 hover:opacity-100"
+                />
+              </div>
             </motion.div>
 
             {/* İletişim Formu */}
@@ -178,16 +177,16 @@ export default function ContactPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-2"
             >
-              <Card>
-                <CardContent className="p-6 sm:p-8">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-6">
+              <Card className="bg-[#16161f] border-zinc-800">
+                <CardContent className="p-6 sm:p-10">
+                  <h2 className="text-2xl font-bold text-white mb-8">
                     Bize Ulaşın
                   </h2>
 
                   {submitSuccess && (
-                    <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
-                      Mesajınız başarıyla gönderildi! En kısa sürede size dönüş
-                      yapacağız.
+                    <div className="mb-8 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400 flex items-center">
+                      <div className="w-2 h-2 rounded-full bg-emerald-500 mr-3" />
+                      Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.
                     </div>
                   )}
 
@@ -262,7 +261,7 @@ export default function ContactPage() {
                       variant="primary"
                       size="lg"
                       isLoading={isSubmitting}
-                      className="w-full sm:w-auto"
+                      className="w-full sm:w-auto min-w-[200px]"
                     >
                       <Send className="mr-2 h-5 w-5" />
                       Mesaj Gönder
@@ -277,4 +276,3 @@ export default function ContactPage() {
     </>
   );
 }
-

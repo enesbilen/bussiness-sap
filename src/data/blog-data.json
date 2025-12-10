@@ -1,0 +1,44 @@
+{
+    "posts": [
+        {
+            "slug": "sap-s4hana-migration-rehberi",
+            "title": "SAP S/4HANA Migration: Başarılı Geçiş İçin Yol Haritası",
+            "excerpt": "Brownfield vs Greenfield yaklaşımları, veri temizliği ve kesintisiz geçiş stratejileri. Başarılı bir S/4HANA projesi için kritik adımlar.",
+            "content": "## SAP S/4HANA'ya Geçiş: Neden Şimdi?\n\nSAP ECC desteğinin 2027'de sona ermesiyle birlikte, S/4HANA'ya geçiş artık bir tercih değil, bir zorunluluk haline geldi. Ancak bu geçiş sadece teknik bir yükseltme değil, aynı zamanda iş süreçlerinizi modernize etmek için bir fırsattır.\n\n### Geçiş Stratejileri: Brownfield mı, Greenfield mi?\n\nProjenizin başarısı, doğru geçiş stratejisini seçmekle başlar:\n\n*   **Greenfield (Yeni Kurulum):** Mevcut süreçlerinizi ve verilerinizi geride bırakıp, sıfırdan temiz bir başlangıç yaparsınız. Standartlaşma ve süreç basitleştirme için idealdir.\n*   **Brownfield (Sistem Dönüşümü):** Mevcut sisteminizi, verilerinizi ve konfigürasyonlarınızı koruyarak S/4HANA'ya dönüştürürsünüz. Daha hızlı ve daha az riskli olabilir, ancak eski karmaşıklığı da taşıma riski vardır.\n*   **Bluefield (Seçici Veri Geçişi):** Her iki yaklaşımın en iyi yönlerini birleştirir. Sadece ihtiyacınız olan verileri taşıyarak sistemi modernize edersiniz.\n\n### Başarı İçin Kritik Adımlar\n\n1.  **Readiness Check:** Sistemenizin S/4HANA'ya hazır olup olmadığını analiz edin.\n2.  **Custom Code Analizi:** Mevcut Z'li geliştirmelerinizin S/4HANA ile uyumluluğunu kontrol edin ve gerekli adaptasyonları yapın.\n3.  **Veri Temizliği:** Eski ve gereksiz verileri temizleyerek yeni sisteme yük taşımayın.\n4.  **Kullanıcı Deneyimi (Fiori):** Sadece arka planı değil, kullanıcı arayüzünü de Fiori ile modernize edin.\n\nAerisap olarak, 15 yıllık deneyimimizle size en uygun yol haritasını çizmek için yanınızdayız.",
+            "date": "2024-03-15",
+            "category": "S/4HANA",
+            "author": "Mehmet Yılmaz",
+            "readTime": "5 dk"
+        },
+        {
+            "slug": "abap-cloud-gecisi",
+            "title": "Modern ABAP: Cloud Dünyasına Uyum Sağlamak",
+            "excerpt": "Restful ABAP Programming (RAP) modeli, Eclipse ile geliştirme ve temiz kod prensipleri. ABAP geliştiricilerinin bilmesi gereken yeni yetkinlikler.",
+            "content": "## ABAP Öldü Mü? Hayır, Evrimleşti!\n\nSAP'nin bulut stratejisiyle birlikte ABAP da büyük bir değişim geçirdi. Klasik ABAP yerini, bulut uyumlu ve modern prensiplere dayanan bir yapıya bırakıyor.\n\n### Restful ABAP Programming (RAP) Modeli\n\nFiori uygulamaları ve Web API'ler geliştirmek için standart model artık RAP'tir. CDS View'lar üzerine kurulu bu yapı, hem OData servisleri oluşturmayı hem de iş mantığını yönetmeyi standartlaştırır.\n\n### Eclipse ile ADT (ABAP Development Tools)\n\nSE80 devri kapanıyor. Modern bir ABAP geliştiricisi için Eclipse artık vazgeçilmez bir araç.\n\n*   **Daha Hızlı Geliştirme:** Kod tamamlama, refactoring ve hızlı navigasyon özellikleri.\n*   **Daha İyi Analiz:** Statik kod analizleri ve unit test entegrasyonu.\n*   **Cloud Uyumluluğu:** SAP BTP üzerinde ABAP geliştirme sadece Eclipse ile mümkün.\n\n### Clean Core Prensibi\n\nS/4HANA Cloud'a geçişi kolaylaştırmak için 'Clean Core' stratejisini benimsiyoruz. Çekirdek SAP kodlarına müdahale etmek yerine, In-App Extensibility veya Side-by-Side Extensibility yöntemlerini kullanmalısınız.",
+            "date": "2024-03-10",
+            "category": "ABAP",
+            "author": "Ayşe Demir",
+            "readTime": "4 dk"
+        },
+        {
+            "slug": "fiori-ux-prensipleri",
+            "title": "SAP Fiori ile Kullanıcı Deneyimini İyileştirme",
+            "excerpt": "Karmaşık SAP ekranlarından, rol tabanlı ve sade Fiori arayüzlerine geçiş. UX tasarımının verimliliğe etkisi.",
+            "content": "## Kullanıcı Deneyimi Neden Önemli?\n\nKarmaşık ve öğrenmesi zor ekranlar, çalışan verimliliğini düşürür ve hata oranını artırır. SAP Fiori, bu sorunu çözmek için tasarlanmış modern bir tasarım sistemidir.\n\n### Fiori Tasarım Prensipleri\n\n1.  **Rol Tabanlı:** Kullanıcı sadece işini yapmak için ihtiyaç duyduğu uygulamaları görür.\n2.  **Uyarlanabilir (Responsive):** Masaüstü, tablet veya mobil; her cihazda kusursuz çalışır.\n3.  **Basit:** Gereksiz detaylardan arındırılmış, odaklanmış ekranlar.\n4.  **Tutarlı:** Tüm uygulamalar aynı tasarım dilini konuşur.\n5.  **Keyifli:** Modern animasyonlar ve sezgisel etkileşimler.\n\n### Fiori Elements vs. Freestyle UI5\n\n*   **Fiori Elements:** Standart şablonları kullanarak çok hızlı uygulama geliştirmenizi sağlar. Bakımı kolaydır ve SAP standartlarına tam uyumludur.\n*   **Freestyle UI5:** Tamamen özelleştirilmiş, piksel piksel tasarlanmış ekranlar gerektiğinde kullanılır. Esneklik sağlar ancak geliştirme maliyeti yüksektir.\n\nDoğru yaklaşımı seçmek, projenizin bütçesi ve zaman planı için kritiktir.",
+            "date": "2024-03-05",
+            "category": "Fiori",
+            "author": "Caner Öztürk",
+            "readTime": "3 dk"
+        },
+        {
+            "slug": "clean-core-stratejisi",
+            "title": "Clean Core Stratejisi: Geleceğe Hazır SAP Sistemleri",
+            "excerpt": "Upgrade maliyetlerini düşürmek ve inovasyonu hızlandırmak için Clean Core yaklaşımı. Side-by-side extensibility kavramı.",
+            "content": "## Clean Core Nedir?\n\nClean Core, SAP sisteminizi standartlara en yakın halde tutarak, gelecekteki güncellemelere ve bulut geçişlerine hazır olmanızı sağlayan bir metodolojidir.\n\n### Neden Clean Core?\n\nEskiden yapılan Z'li geliştirmeler ve modifikasyonlar, her upgrade projesini aylar süren bir çileye dönüştürüyordu. Clean Core ile bu bağımlılığı ortadan kaldırıyoruz.\n\n### Nasıl Uygulanır?\n\n1.  **Modifikasyondan Kaçının:** SAP standart kodlarına asla dokunmayın.\n2.  **Key User Extensibility:** Basit alan eklemeleri ve UI düzenlemeleri için standart araçları kullanın.\n3.  **On-Stack Developer Extensibility:** Sıkı entegrasyon gerektiren geliştirmeler için sadece izin verilen (released) API'leri kullanın.\n4.  **Side-by-Side Extensibility:** Büyük ve bağımsız uygulamaları SAP BTP (Business Technology Platform) üzerinde geliştirin.\n\nBu strateji ile sisteminiz her zaman güncel, güvenli ve esnek kalır.",
+            "date": "2024-02-28",
+            "category": "Cloud",
+            "author": "Zeynep Kaya",
+            "readTime": "6 dk"
+        }
+    ]
+}

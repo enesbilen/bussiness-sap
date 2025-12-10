@@ -4,23 +4,22 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Container from "@/components/ui/Container";
-import Section from "@/components/ui/Section";
 
 interface StatItem {
   value: number;
   label: string;
   suffix?: string;
+  prefix?: string;
 }
 
 const stats: StatItem[] = [
   { value: 15, label: "Yıllık Deneyim", suffix: "+" },
   { value: 200, label: "Tamamlanan Proje", suffix: "+" },
   { value: 50, label: "Mutlu Müşteri", suffix: "+" },
-  { value: 100, label: "Uzman Ekip", suffix: "%" },
+  { value: 98, label: "Müşteri Memnuniyeti", suffix: "%" },
 ];
 
-
-function Counter({ value, suffix }: { value: number; suffix?: string }) {
+function Counter({ value, suffix, prefix }: { value: number; suffix?: string; prefix?: string }) {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5 });
   const [displayValue, setDisplayValue] = React.useState(0);
 
@@ -30,15 +29,16 @@ function Counter({ value, suffix }: { value: number; suffix?: string }) {
     const duration = 2000;
     const steps = 60;
     const increment = value / steps;
-    let current = 0;
     let step = 0;
 
     const timer = setInterval(() => {
       step++;
-      current = Math.min(increment * step, value);
-      setDisplayValue(Math.floor(current));
-
-      if (step >= steps) {
+      if (step <= steps) {
+        setDisplayValue((prev) => {
+          const next = Math.min(increment * step, value);
+          return Math.floor(next);
+        });
+      } else {
         clearInterval(timer);
         setDisplayValue(value);
       }
@@ -48,9 +48,8 @@ function Counter({ value, suffix }: { value: number; suffix?: string }) {
   }, [inView, value]);
 
   return (
-    <span ref={ref} className="text-5xl sm:text-6xl font-bold text-sky-500">
-      {displayValue}
-      {suffix}
+    <span ref={ref} className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gradient">
+      {prefix}{displayValue}{suffix}
     </span>
   );
 }
@@ -62,35 +61,43 @@ export default function Stats() {
   });
 
   return (
-    <Section spacing="lg" background="default">
-      <Container>
+    <section className="py-24 relative overflow-hidden bg-[#0a0a0f]">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#12121a] via-[#0a0a0f] to-[#12121a]" />
+
+      {/* Decorative Elements */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-indigo-500/10 rounded-full blur-[150px]" />
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 bg-purple-500/10 rounded-full blur-[150px]" />
+
+      <Container className="relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+                className="relative group"
               >
-                <div className="mb-2">
-                  <Counter value={stat.value} suffix={stat.suffix} />
+                <div className="gradient-border p-8 text-center h-full flex flex-col items-center justify-center bg-[#16161f] rounded-2xl">
+                  <div className="mb-3">
+                    <Counter value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
+                  </div>
+                  <p className="text-base font-medium text-zinc-400">
+                    {stat.label}
+                  </p>
                 </div>
-                <p className="text-lg font-medium text-slate-700">
-                  {stat.label}
-                </p>
               </motion.div>
             ))}
           </div>
         </motion.div>
       </Container>
-    </Section>
+    </section>
   );
 }
-

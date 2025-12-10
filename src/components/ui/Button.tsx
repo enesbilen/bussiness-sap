@@ -27,23 +27,23 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+      "inline-flex items-center justify-center rounded-xl font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0f] disabled:pointer-events-none disabled:opacity-50";
 
     const variants = {
       primary:
-        "bg-sky-500 text-white hover:bg-sky-600 active:bg-sky-700 shadow-md hover:shadow-lg",
+        "bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40",
       secondary:
-        "bg-slate-800 text-white hover:bg-slate-900 active:bg-slate-950 shadow-md hover:shadow-lg",
+        "bg-zinc-800 text-white hover:bg-zinc-700 border border-zinc-700",
       outline:
-        "border-2 border-slate-300 bg-transparent text-slate-700 hover:bg-slate-50 hover:border-slate-400 active:bg-slate-100",
+        "border border-zinc-700 bg-transparent text-zinc-300 hover:bg-zinc-800/50 hover:border-zinc-600",
       ghost:
-        "bg-transparent text-slate-700 hover:bg-slate-100 active:bg-slate-200",
+        "bg-transparent text-zinc-400 hover:text-white hover:bg-zinc-800/50",
     };
 
     const sizes = {
       sm: "h-9 px-4 text-sm",
-      md: "h-11 px-6 text-base",
-      lg: "h-13 px-8 text-lg",
+      md: "h-11 px-6 text-sm",
+      lg: "h-13 px-8 text-base",
     };
 
     const buttonClasses = cn(
@@ -104,4 +104,3 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button";
 
 export default Button;
-

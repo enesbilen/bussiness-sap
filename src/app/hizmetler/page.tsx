@@ -20,7 +20,6 @@ import {
   CardTitle,
 } from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
-import Link from "next/link";
 
 const services = [
   {
@@ -37,6 +36,7 @@ const services = [
       "Go-Live Support",
       "Post-Migration Optimization",
     ],
+    gradient: "from-indigo-500 to-purple-500",
   },
   {
     id: "abap",
@@ -52,6 +52,7 @@ const services = [
       "RFC & BAPI Development",
       "Performance Optimization",
     ],
+    gradient: "from-purple-500 to-pink-500",
   },
   {
     id: "fiori",
@@ -67,6 +68,7 @@ const services = [
       "Fiori Launchpad Configuration",
       "UX Best Practices",
     ],
+    gradient: "from-amber-500 to-orange-500",
   },
   {
     id: "migration",
@@ -82,6 +84,7 @@ const services = [
       "OS/DB Migration",
       "Data Archiving",
     ],
+    gradient: "from-cyan-500 to-blue-500",
   },
   {
     id: "integration",
@@ -97,6 +100,7 @@ const services = [
       "Web Services",
       "Cloud Integration",
     ],
+    gradient: "from-emerald-500 to-teal-500",
   },
   {
     id: "security",
@@ -112,6 +116,7 @@ const services = [
       "Vulnerability Assessment",
       "Security Best Practices",
     ],
+    gradient: "from-rose-500 to-red-500",
   },
   {
     id: "cloud",
@@ -127,6 +132,7 @@ const services = [
       "Mobile Services",
       "Cloud Security",
     ],
+    gradient: "from-indigo-400 to-blue-400",
   },
   {
     id: "analytics",
@@ -142,6 +148,7 @@ const services = [
       "Predictive Analytics",
       "Real-time Reporting",
     ],
+    gradient: "from-violet-500 to-purple-500",
   },
   {
     id: "support",
@@ -157,6 +164,7 @@ const services = [
       "Regular Maintenance",
       "Proactive Monitoring",
     ],
+    gradient: "from-slate-500 to-zinc-500",
   },
 ];
 
@@ -171,46 +179,53 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <Section spacing="xl" background="default" className="pt-32">
-        <Container>
+      <Section spacing="xl" background="primary" className="pt-32 relative overflow-hidden">
+        {/* Decorative BG */}
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[150px]" />
+
+        <Container className="relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               Hizmetlerimiz
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
-              15 yılı aşkın SAP ve ABAP deneyimi ile kurumsal çözümler sunan
-              önde gelen danışmanlık firması olarak, ihtiyacınız olan tüm SAP
-              hizmetlerini tek çatı altında sunuyoruz.
+            <p className="text-xl text-zinc-400 leading-relaxed">
+              15 yılı aşkın deneyimimizle, SAP projelerinizde ihtiyacınız olan
+              tüm hizmetleri <span className="text-white font-medium">tek çatı altında</span> sunuyoruz.
             </p>
           </div>
         </Container>
       </Section>
 
-      <Section spacing="lg" background="white">
+      <Section spacing="lg" background="secondary">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <Card key={service.id} hover className="h-full flex flex-col">
+                <Card key={service.id} hover className="h-full flex flex-col group border-zinc-800">
                   <CardHeader>
-                    <div className="h-12 w-12 rounded-lg bg-sky-100 flex items-center justify-center mb-4">
-                      <Icon className="h-6 w-6 text-sky-600" />
+                    <div className={`
+                      h-14 w-14 rounded-2xl bg-gradient-to-br ${service.gradient} 
+                      flex items-center justify-center mb-4 glow shadow-lg
+                    `}>
+                      <Icon className="h-7 w-7 text-white" />
                     </div>
-                    <CardTitle className="text-2xl">{service.title}</CardTitle>
+                    <CardTitle className="text-2xl group-hover:text-gradient transition-all duration-300">
+                      {service.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-1 flex flex-col">
-                    <p className="text-slate-600 mb-6 leading-relaxed flex-1">
+                    <p className="text-zinc-400 mb-8 leading-relaxed flex-1">
                       {service.description}
                     </p>
-                    <div className="space-y-2 mb-6">
+                    <div className="space-y-3 mb-8">
                       {service.features.map((feature, index) => (
                         <div
                           key={index}
-                          className="flex items-start space-x-2 text-sm"
+                          className="flex items-start space-x-3 text-sm"
                         >
-                          <CheckCircle className="h-5 w-5 text-sky-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-700">{feature}</span>
+                          <CheckCircle className="h-5 w-5 text-indigo-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-zinc-300">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -218,7 +233,7 @@ export default function ServicesPage() {
                       asChild
                       href="/iletisim"
                       variant="outline"
-                      className="w-full"
+                      className="w-full mt-auto"
                     >
                       Teklif Alın
                     </Button>
@@ -230,29 +245,32 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <Section spacing="lg" background="slate">
+      <Section spacing="lg" background="primary">
         <Container>
-          <div className="bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl p-8 sm:p-12 text-center text-white">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Projeniz İçin Hemen Teklif Alın
-            </h2>
-            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              SAP projeleriniz için ücretsiz danışmanlık ve özel teklif almak
-              için iletişime geçin.
-            </p>
-            <Button
-              asChild
-              href="/iletisim"
-              variant="secondary"
-              size="lg"
-              className="bg-white text-sky-600 hover:bg-slate-50"
-            >
-              İletişime Geçin
-            </Button>
+          <div className="rounded-3xl relative overflow-hidden p-8 sm:p-12 text-center text-white border border-zinc-800">
+            {/* Gradient BG */}
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/40 via-purple-900/40 to-indigo-900/40" />
+
+            <div className="relative z-10 max-w-2xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+                Projeniz İçin Teklif Alın
+              </h2>
+              <p className="text-lg text-zinc-300 mb-8">
+                SAP projeleriniz için ücretsiz danışmanlık ve size özel çözümlerimizi
+                konuşmak için hemen iletişime geçin.
+              </p>
+              <Button
+                asChild
+                href="/iletisim"
+                variant="primary"
+                size="lg"
+              >
+                İletişime Geçin
+              </Button>
+            </div>
           </div>
         </Container>
       </Section>
     </>
   );
 }
-

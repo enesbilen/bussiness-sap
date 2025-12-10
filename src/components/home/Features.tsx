@@ -4,7 +4,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
-  Code,
+  Code2,
   Database,
   Shield,
   Zap,
@@ -12,45 +12,49 @@ import {
   TrendingUp,
 } from "lucide-react";
 import Container from "@/components/ui/Container";
-import Section from "@/components/ui/Section";
-import { Card, CardContent } from "@/components/ui/Card";
 
 const features = [
   {
-    icon: Code,
+    icon: Code2,
     title: "ABAP Geliştirme",
-    description:
-      "Modern ABAP teknikleri ile ölçeklenebilir, performanslı ve bakımı kolay SAP uygulamaları geliştiriyoruz.",
+    description: "Modern ABAP teknikleri ile yüksek performanslı SAP uygulamaları.",
+    gradient: "from-indigo-500 to-purple-500",
+    size: "large",
   },
   {
     icon: Database,
     title: "S/4HANA Migration",
-    description:
-      "Eski SAP sistemlerinizi S/4HANA'ya sorunsuz geçiş için kapsamlı planlama ve uzman ekibimizle yanınızdayız.",
+    description: "Sorunsuz geçiş ve kapsamlı planlama.",
+    gradient: "from-purple-500 to-pink-500",
+    size: "small",
   },
   {
     icon: Shield,
-    title: "Güvenlik & Uyumluluk",
-    description:
-      "Enterprise-grade güvenlik standartları ve sektör uyumluluk gereksinimlerini karşılayan çözümler sunuyoruz.",
+    title: "Güvenlik",
+    description: "Enterprise-grade güvenlik standartları.",
+    gradient: "from-emerald-500 to-teal-500",
+    size: "small",
   },
   {
     icon: Zap,
-    title: "Performans Optimizasyonu",
-    description:
-      "SAP sistemlerinizin performansını analiz edip, optimize ederek iş süreçlerinizin hızını artırıyoruz.",
+    title: "Performans",
+    description: "Sistem optimizasyonu ve hız artışı.",
+    gradient: "from-amber-500 to-orange-500",
+    size: "medium",
   },
   {
     icon: Users,
     title: "Eğitim & Destek",
-    description:
-      "Ekibinizin SAP sistemlerini etkin kullanması için kapsamlı eğitim programları ve 7/24 destek hizmeti.",
+    description: "Kapsamlı eğitim programları ve 7/24 destek.",
+    gradient: "from-cyan-500 to-blue-500",
+    size: "medium",
   },
   {
     icon: TrendingUp,
     title: "Stratejik Danışmanlık",
-    description:
-      "SAP yatırımlarınızın ROI'sini maksimize etmek için stratejik danışmanlık ve roadmap oluşturma hizmetleri.",
+    description: "ROI maksimizasyonu için roadmap oluşturma.",
+    gradient: "from-rose-500 to-red-500",
+    size: "small",
   },
 ];
 
@@ -61,7 +65,10 @@ export default function Features() {
   });
 
   return (
-    <Section spacing="lg" background="white">
+    <section className="py-24 bg-[#0a0a0f] relative overflow-hidden">
+      {/* Background Gradient */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-500/10 rounded-full blur-[150px]" />
+
       <Container>
         <motion.div
           ref={ref}
@@ -70,50 +77,59 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            Neden Aerisap?
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            Neden <span className="text-gradient">Aerisap?</span>
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            15 yıllık deneyimimiz ve uzman ekibimizle, SAP projelerinizde
-            güvenilir çözüm ortağınız olmaktan gurur duyuyoruz.
+          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+            SAP ekosisteminde uçtan uca çözümler sunuyoruz.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px]">
           {features.map((feature, index) => {
             const Icon = feature.icon;
+            const isLarge = feature.size === "large";
+            const isMedium = feature.size === "medium";
+
             return (
               <motion.div
                 key={feature.title}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`
+                  relative group rounded-2xl glass glass-hover p-6 
+                  ${isLarge ? 'md:col-span-2 md:row-span-2' : ''}
+                  ${isMedium ? 'lg:col-span-2' : ''}
+                  flex flex-col justify-between
+                  transition-all duration-300
+                `}
               >
-                <Card hover className="h-full">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
-                        <div className="h-12 w-12 rounded-lg bg-sky-100 flex items-center justify-center">
-                          <Icon className="h-6 w-6 text-sky-600" />
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                          {feature.title}
-                        </h3>
-                        <p className="text-slate-600 leading-relaxed">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                {/* Gradient Glow on Hover */}
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+
+                <div className="relative z-10">
+                  <div className={`
+                    inline-flex items-center justify-center rounded-xl bg-gradient-to-br ${feature.gradient} p-3 mb-4
+                    ${isLarge ? 'w-14 h-14' : 'w-12 h-12'}
+                  `}>
+                    <Icon className={`${isLarge ? 'h-7 w-7' : 'h-5 w-5'} text-white`} />
+                  </div>
+
+                  <h3 className={`font-semibold text-white mb-2 ${isLarge ? 'text-2xl' : 'text-lg'}`}>
+                    {feature.title}
+                  </h3>
+                </div>
+
+                <p className={`text-zinc-400 relative z-10 ${isLarge ? 'text-base' : 'text-sm'}`}>
+                  {feature.description}
+                </p>
               </motion.div>
             );
           })}
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }
-

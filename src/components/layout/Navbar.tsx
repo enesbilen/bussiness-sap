@@ -11,7 +11,7 @@ import Container from "@/components/ui/Container";
 
 const navigation = [
   { name: "Ana Sayfa", href: "/" },
-  { name: "Hizmetlerimiz", href: "/hizmetler" },
+  { name: "Hizmetler", href: "/hizmetler" },
   { name: "Blog", href: "/blog" },
   { name: "İletişim", href: "/iletisim" },
 ];
@@ -38,8 +38,8 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md"
-          : "bg-white/80 backdrop-blur-sm"
+          ? "glass border-b border-zinc-800/50"
+          : "bg-transparent"
       )}
     >
       <Container>
@@ -47,10 +47,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center space-x-2 text-xl font-bold text-slate-900 transition-colors hover:text-sky-500"
+            className="flex items-center space-x-2 group"
             aria-label="Aerisap Ana Sayfa"
           >
-            <span className="text-2xl">Aerisap</span>
+            <span className="text-2xl font-bold text-white group-hover:text-gradient transition-all duration-300">
+              Aerisap
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -62,13 +64,21 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "px-4 py-2 text-sm font-medium transition-colors rounded-lg",
+                    "relative px-4 py-2 text-sm font-medium transition-colors rounded-lg",
                     isActive
-                      ? "text-sky-500 bg-sky-50"
-                      : "text-slate-700 hover:text-sky-500 hover:bg-slate-50"
+                      ? "text-white"
+                      : "text-zinc-400 hover:text-white"
                   )}
                 >
                   {item.name}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNav"
+                      className="absolute inset-0 rounded-lg bg-zinc-800/50"
+                      style={{ zIndex: -1 }}
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
                 </Link>
               );
             })}
@@ -81,7 +91,7 @@ export default function Navbar() {
               href="/iletisim"
               variant="primary"
               size="md"
-              className="shadow-md hover:shadow-lg"
+              className="bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 border-0"
             >
               İletişime Geçin
             </Button>
@@ -90,7 +100,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 text-slate-700 hover:text-sky-500 transition-colors"
+            className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Menüyü aç/kapat"
             aria-expanded={isMobileMenuOpen}
@@ -112,7 +122,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white border-t border-slate-200"
+            className="md:hidden glass border-t border-zinc-800"
           >
             <Container>
               <div className="py-4 space-y-2">
@@ -126,8 +136,8 @@ export default function Navbar() {
                       className={cn(
                         "block px-4 py-3 text-base font-medium transition-colors rounded-lg",
                         isActive
-                          ? "text-sky-500 bg-sky-50"
-                          : "text-slate-700 hover:text-sky-500 hover:bg-slate-50"
+                          ? "text-white bg-zinc-800/50"
+                          : "text-zinc-400 hover:text-white hover:bg-zinc-800/30"
                       )}
                     >
                       {item.name}
@@ -140,7 +150,7 @@ export default function Navbar() {
                     href="/iletisim"
                     variant="primary"
                     size="md"
-                    className="w-full"
+                    className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 border-0"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     İletişime Geçin
@@ -154,4 +164,3 @@ export default function Navbar() {
     </motion.header>
   );
 }
-

@@ -12,8 +12,8 @@ const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
       <label
         ref={ref}
         className={cn(
-          "block text-sm font-medium text-slate-700 mb-2",
-          required && "after:content-['*'] after:ml-1 after:text-red-500",
+          "block text-sm font-medium text-zinc-300 mb-2",
+          required && "after:content-['*'] after:ml-1 after:text-indigo-500",
           className
         )}
         {...props}
@@ -27,4 +27,3 @@ const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
 Label.displayName = "Label";
 
 export default Label;
-

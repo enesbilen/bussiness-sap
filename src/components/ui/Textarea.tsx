@@ -12,19 +12,20 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       <div className="w-full">
         <textarea
           className={cn(
-            "flex min-h-[120px] w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 transition-colors",
-            "placeholder:text-slate-400",
-            "focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-0",
+            "flex min-h-[120px] w-full rounded-xl border border-zinc-700 bg-zinc-800/50 px-4 py-3 text-base text-white transition-all duration-200",
+            "placeholder:text-zinc-500",
+            "focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20",
+            "hover:border-zinc-600",
             "disabled:cursor-not-allowed disabled:opacity-50",
             "resize-y",
-            error && "border-red-500 focus:border-red-500 focus:ring-red-500",
+            error && "border-red-500 focus:border-red-500 focus:ring-red-500/20",
             className
           )}
           ref={ref}
           {...props}
         />
         {error && (
-          <p className="mt-1.5 text-sm text-red-600" role="alert">
+          <p className="mt-1.5 text-sm text-red-500" role="alert">
             {error}
           </p>
         )}
@@ -36,4 +37,3 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 Textarea.displayName = "Textarea";
 
 export default Textarea;
-
