@@ -26,7 +26,7 @@ export function ContactSection() {
   };
 
   return (
-    <section className="py-20 sm:py-24 px-6 lg:px-8 bg-white">
+    <section id="contact" className="py-20 sm:py-24 px-6 lg:px-8 bg-white">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Sol Taraf - İletişim Bilgileri */}
@@ -39,13 +39,13 @@ export function ContactSection() {
 
               {/* Başlık */}
               <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
-                Get in Touch with Us
+                Bizimle İletişime Geçin
               </h2>
 
               {/* Alt Açıklama */}
               <p className="text-base sm:text-lg leading-[1.7] text-[#666666] mb-6 font-body">
-                Reach out to us for inquiries, support, or partnership
-                opportunities. We&apos;re here to assist you!
+                SAP danışmanlık hizmetleri, Daisy portalı veya özel çözümlerimiz hakkında 
+                bilgi almak için bizimle iletişime geçin. Size yardımcı olmaktan mutluluk duyarız!
               </p>
 
               {/* İletişim Kartları */}
@@ -53,7 +53,7 @@ export function ContactSection() {
                 {/* Email Kartı */}
                 <button
                   onClick={() =>
-                    (window.location.href = "mailto:hello@sap.com")
+                    (window.location.href = "mailto:destek@sapport.com.tr")
                   }
                   className="w-full flex items-center justify-between p-4 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow group"
                 >
@@ -63,10 +63,10 @@ export function ContactSection() {
                     </div>
                     <div className="text-left">
                       <div className="text-sm font-body text-[#666666] mb-1">
-                        You can email us here
+                        E-posta ile iletişime geçin
                       </div>
                       <div className="text-base font-body font-semibold text-[#000000]">
-                        hello@sap.com
+                        destek@sapport.com.tr
                       </div>
                     </div>
                   </div>
@@ -74,17 +74,20 @@ export function ContactSection() {
                 </button>
 
                 {/* Phone Kartı */}
-                <button className="w-full flex items-center justify-between p-4 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow group">
+                <button 
+                  onClick={() => (window.location.href = "tel:+903125571284")}
+                  className="w-full flex items-center justify-between p-4 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow group"
+                >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center">
                       <Phone className="w-6 h-6 text-gray-700" />
                     </div>
                     <div className="text-left">
                       <div className="text-sm font-body text-[#666666] mb-1">
-                        Or give us a call
+                        Telefon ile arayın
                       </div>
                       <div className="text-base font-body font-semibold text-[#000000]">
-                        Book a Call
+                        312 557 12 84
                       </div>
                     </div>
                   </div>
@@ -92,17 +95,20 @@ export function ContactSection() {
                 </button>
 
                 {/* Location Kartı */}
-                <button className="w-full flex items-center justify-between p-4 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow group">
+                <button 
+                  onClick={() => window.open("https://maps.google.com/?q=Hacı+Bayram,+Mahmut+Atalay+Sk.+No:2+D:110,+06050+Altındağ/Ankara", "_blank")}
+                  className="w-full flex items-center justify-between p-4 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow group"
+                >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center">
                       <MapPin className="w-6 h-6 text-gray-700" />
                     </div>
                     <div className="text-left">
                       <div className="text-sm font-body text-[#666666] mb-1">
-                        Locations
+                        Adresimiz
                       </div>
                       <div className="text-base font-body font-semibold text-[#000000]">
-                        Get Directions
+                        Altındağ, Ankara
                       </div>
                     </div>
                   </div>
@@ -114,11 +120,11 @@ export function ContactSection() {
           {/* Sağ Taraf - Form */}
           <div className="lg:col-span-8 bg-white rounded-3xl p-6 lg:p-8 border border-gray-200">
             <h3 className="text-2xl font-display font-medium tracking-tight text-[#000000] mb-2 leading-[1.3]">
-              Send Us a Message
+              Bize Mesaj Gönderin
             </h3>
             <p className="text-base sm:text-lg leading-[1.7] text-[#666666] mb-6 font-body">
-              Use our convenient contact form to reach out with questions,
-              feedback, or collaboration inquiries.
+              Sorularınız, geri bildirimleriniz veya işbirliği teklifleriniz için 
+              iletişim formumuzu kullanabilirsiniz.
             </p>
 
             <div className="space-y-4">
@@ -127,7 +133,7 @@ export function ContactSection() {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Enter your name"
+                  placeholder="Adınızı girin"
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all font-body"
@@ -139,7 +145,7 @@ export function ContactSection() {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Enter your email"
+                  placeholder="E-posta adresinizi girin"
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all font-body"
@@ -150,7 +156,7 @@ export function ContactSection() {
               <div>
                 <textarea
                   name="message"
-                  placeholder="Enter your message"
+                  placeholder="Mesajınızı girin"
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
@@ -164,7 +170,7 @@ export function ContactSection() {
                   type="submit"
                   className="w-full py-4 bg-gray-900 text-white font-body font-semibold rounded-xl hover:bg-gray-800 transition-colors"
                 >
-                  Submit
+                  Gönder
                 </button>
               </form>
             </div>

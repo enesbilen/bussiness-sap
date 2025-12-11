@@ -1,109 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import { Linkedin, Twitter, Instagram, Sparkles, Zap, Moon, Wind, Triangle, Layers, Circle } from "lucide-react";
+import { Sparkles, Zap, Moon, Wind, Triangle, Layers, Circle } from "lucide-react";
+import testimonialsData from "@/data/testimonials.json";
+
+// Icon mapping
+const iconMap: Record<string, any> = {
+  Sparkles,
+  Zap,
+  Moon,
+  Wind,
+  Triangle,
+  Layers,
+  Circle,
+};
 
 // Brand logoları ve testimonial verileri
-const brandTestimonials = [
-  {
-    brand: { name: "Zenith", icon: Sparkles },
-    testimonial: {
-      company: "Zenith",
-      quote: "SAP has been instrumental in streamlining our project management processes, enabling seamless collaboration and enhancing overall efficiency.",
-      name: "Emily Johnson",
-      role: "CEO of Zenith",
-      stats: [
-        { value: "Increased 25%", label: "Operational Efficiency" },
-        { value: "Reduced 20%", label: "Project Turnaround Time" },
-        { value: "Increased 30%", label: "Resource Utilization" },
-      ],
-    },
+const brandTestimonials = testimonialsData.map((item: any) => ({
+  brand: {
+    name: item.brand.name,
+    icon: iconMap[item.brand.icon] || Circle,
   },
-  {
-    brand: { name: "Vortex", icon: Zap },
-    testimonial: {
-      company: "Vortex",
-      quote: "The integration of SAP into our workflow has transformed how we manage projects. The intuitive interface and powerful features have significantly improved our team's productivity.",
-      name: "Michael Chen",
-      role: "CTO of Vortex",
-      stats: [
-        { value: "Increased 35%", label: "Team Productivity" },
-        { value: "Reduced 15%", label: "Project Costs" },
-        { value: "Increased 40%", label: "Client Satisfaction" },
-      ],
-    },
-  },
-  {
-    brand: { name: "Lumina", icon: Moon },
-    testimonial: {
-      company: "Lumina",
-      quote: "SAP's comprehensive project management solution has revolutionized our operations. We've seen remarkable improvements in efficiency and collaboration across all departments.",
-      name: "Sarah Williams",
-      role: "Operations Director of Lumina",
-      stats: [
-        { value: "Increased 28%", label: "Process Efficiency" },
-        { value: "Reduced 25%", label: "Time to Market" },
-        { value: "Increased 45%", label: "Cross-team Collaboration" },
-      ],
-    },
-  },
-  {
-    brand: { name: "Velocity", icon: Wind },
-    testimonial: {
-      company: "Velocity",
-      quote: "Implementing SAP has been a game-changer for our organization. The platform's robust features and seamless integration capabilities have elevated our project management to new heights.",
-      name: "David Martinez",
-      role: "Project Manager of Velocity",
-      stats: [
-        { value: "Increased 32%", label: "Project Success Rate" },
-        { value: "Reduced 22%", label: "Resource Waste" },
-        { value: "Increased 38%", label: "Team Coordination" },
-      ],
-    },
-  },
-  {
-    brand: { name: "Apex", icon: Triangle },
-    testimonial: {
-      company: "Apex",
-      quote: "SAP has transformed our project management approach, providing us with the tools and insights needed to deliver exceptional results consistently across all our initiatives.",
-      name: "Anna Schmidt",
-      role: "Head of Operations at Apex",
-      stats: [
-        { value: "Increased 42%", label: "Delivery Speed" },
-        { value: "Reduced 18%", label: "Operational Overhead" },
-        { value: "Increased 50%", label: "Stakeholder Satisfaction" },
-      ],
-    },
-  },
-  {
-    brand: { name: "Fusion", icon: Layers },
-    testimonial: {
-      company: "Fusion",
-      quote: "With SAP, we've achieved unprecedented levels of operational excellence. The platform has become an integral part of our success story.",
-      name: "James Park",
-      role: "VP of Engineering at Fusion",
-      stats: [
-        { value: "Increased 38%", label: "Engineering Output" },
-        { value: "Reduced 28%", label: "Development Cycle" },
-        { value: "Increased 48%", label: "Code Quality" },
-      ],
-    },
-  },
-  {
-    brand: { name: "Echo", icon: Circle },
-    testimonial: {
-      company: "Echo",
-      quote: "The impact of SAP on our business has been transformative. We've streamlined processes, improved collaboration, and exceeded our performance targets.",
-      name: "Lisa Anderson",
-      role: "Chief Strategy Officer at Echo",
-      stats: [
-        { value: "Increased 44%", label: "Strategic Alignment" },
-        { value: "Reduced 30%", label: "Decision Time" },
-        { value: "Increased 52%", label: "Business Outcomes" },
-      ],
-    },
-  },
-];
+  testimonial: item.testimonial,
+}));
 
 export function CompanyTestimonials () {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -115,12 +34,12 @@ export function CompanyTestimonials () {
       <div className="mx-auto max-w-7xl">
         {/* Başlık */}
         <h2 className="text-center text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
-          Company Testimonials
+          Müşteri Referansları
         </h2>
         
         {/* Description */}
         <p className="text-center text-base sm:text-lg leading-[1.7] text-[#666666] max-w-2xl mx-auto mb-12 font-body">
-          Discover how leading companies are transforming their operations with SAP&apos;s powerful project management solutions.
+          Önde gelen şirketlerin SAPPort ve Daisy ile iş süreçlerini nasıl dönüştürdüklerini keşfedin.
         </p>
 
         {/* Brand Logo Bar */}
@@ -171,8 +90,8 @@ export function CompanyTestimonials () {
                 {/* Kişi Bilgisi + Sosyal İkonlar */}
                 <div className="flex items-center justify-between mb-12">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-semibold text-lg">
-                      {current.testimonial.name.split(' ').map(n => n[0]).join('')}
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-black to-gray-300 flex items-center justify-center text-white font-semibold text-lg">
+                      {current.testimonial.name.split(' ').map((n: string) => n[0]).join('')}
                     </div>
                     <div>
                       <div className="font-body font-semibold text-[#000000] text-lg">
@@ -189,7 +108,7 @@ export function CompanyTestimonials () {
 
               {/* İstatistikler – Tek satırda yan yana */}
               <div className="flex items-stretch gap-8 pt-8 border-t border-gray-200">
-                {current.testimonial.stats.map((stat, i) => (
+                {current.testimonial.stats.map((stat: { value: string; label: string }, i: number) => (
                   <div key={i} className="flex-1 relative">
                     {i !== 0 && (
                       <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-300" />

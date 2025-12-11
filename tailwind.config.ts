@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         background: "#F9FAFB", // Very light grey, almost white (matches the clean look)
         foreground: "#111111", // Sharp black for main text
-        "brand-green": "#C3F53C", // The specific Lime Green from the image
+        "brand-green": "#00AFFF", // Modern Mavi tonları
         "brand-dark-pill": "#1F1F1F", // Dark Grey for the navbar pill
         "brand-gray-text": "#666666", // Subtitles
       },

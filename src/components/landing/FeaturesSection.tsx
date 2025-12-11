@@ -5,35 +5,37 @@ export function FeaturesSection() {
     return (
         <div className="relative py-20 sm:py-24 px-6 lg:px-8 bg-white">
             <div className="mx-auto max-w-7xl">
-                {/* Unique Features Pill */}
+                {/* Daisy Features Pill */}
                 <div className="flex justify-center mb-6">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 text-gray-600 text-sm font-medium shadow-sm">
                         <Flame className="w-4 h-4" />
-                        <span>Unique Features</span>
+                        <span>Daisy Özellikleri</span>
                     </div>
                 </div>
 
                 {/* Main Heading */}
                 <h2 className="text-center text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
-                    Elevate Your Projects with SAP
+                    Daisy&apos;nin Öne Çıkan Özellikleri
                 </h2>
 
                 {/* Description */}
                 <p className="text-center text-base sm:text-lg leading-[1.7] text-[#666666] max-w-2xl mx-auto mb-12 font-body">
-                    Explore SAP&apos;s powerful features, Boost productivity, streamline workflows, and achieve project success with ease.
+                    SAP sisteminize tam entegre Daisy portalı ile iş süreçlerinizi dijitalleştirin, 
+                    verimliliğinizi artırın ve çalışan deneyimini iyileştirin.
                 </p>
 
                 {/* Two Column Features */}
                 <div className="grid grid-cols-12 gap-8 mt-12">
-                    {/* Left Column: Effortless Meeting Scheduling (col-4) */}
+                    {/* Left Column: İnsan Kaynakları Yönetimi (col-4) */}
                     <div className="col-span-12 lg:col-span-4 bg-white rounded-xl border border-gray-100 shadow-sm p-6">
                         <div className="flex items-start justify-between mb-4">
                             <div>
                                 <h3 className="text-xl font-display font-medium tracking-tight text-[#000000] mb-2 leading-[1.3]">
-                                    Effortless Meeting Scheduling
+                                    İnsan Kaynakları Yönetimi
                                 </h3>
                                 <p className="text-sm leading-[1.7] text-[#666666] font-body">
-                                    Seamlessly plan within SAP for enhanced collaboration and productivity.
+                                    Bordro görüntüleme, izin talepleri, masraf yönetimi ve performans değerlendirme 
+                                    gibi tüm İK süreçlerini tek platformdan yönetin.
                                 </p>
                             </div>
                             <button className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition-colors">
@@ -77,15 +79,16 @@ export function FeaturesSection() {
                         </div>
                     </div>
 
-                    {/* Right Column: Streamlined Communication (col-8) */}
+                    {/* Right Column: Duyuru & Organizasyon (col-8) */}
                     <div className="col-span-12 lg:col-span-8 bg-white rounded-xl border border-gray-100 shadow-sm p-6">
                         <div className="flex items-start justify-between mb-4">
                             <div>
                                 <h3 className="text-xl font-display font-medium tracking-tight text-[#000000] mb-2 leading-[1.3]">
-                                    Streamlined Communication
+                                    Duyuru & Organizasyon
                                 </h3>
                                 <p className="text-sm leading-[1.7] text-[#666666] font-body">
-                                    Simplify team communication with SAP&apos;s intuitive interface and integrated messaging features.
+                                    Şirket içi duyurular, anketler, organizasyon şemaları ve dinamik iletişim 
+                                    araçlarıyla kurumsal iletişiminizi güçlendirin.
                                 </p>
                             </div>
                             <button className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition-colors">
@@ -119,15 +122,16 @@ export function FeaturesSection() {
 
                 {/* Three Column Features */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 mb-12">
-                    {/* Column 1: Intelligent Notifications */}
+                    {/* Column 1: Self Servis Hizmetler */}
                     <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
                         <div className="flex items-start justify-between mb-4">
                             <div>
                                 <h3 className="text-xl font-display font-medium tracking-tight text-[#000000] mb-2 leading-[1.3]">
-                                    Intelligent Notifications
+                                    Self Servis Hizmetler
                                 </h3>
                                 <p className="text-sm leading-[1.7] text-[#666666] font-body">
-                                    Stay informed and on track with smart notifications.
+                                    Çalışanlarınız izin talepleri, bordro görüntüleme ve masraf yönetimi 
+                                    gibi işlemleri kendileri yapabilsin.
                                 </p>
                             </div>
                             <button className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition-colors">
@@ -183,15 +187,16 @@ export function FeaturesSection() {
                         </div>
                     </div>
 
-                    {/* Column 2: Rapid Feedback Loop */}
+                    {/* Column 2: Mobil & Web Erişimi */}
                     <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
                         <div className="flex items-start justify-between mb-4">
                             <div>
                                 <h3 className="text-xl font-display font-medium tracking-tight text-[#000000] mb-2 leading-[1.3]">
-                                    Rapid Feedback Loop
+                                    Mobil & Web Erişimi
                                 </h3>
                                 <p className="text-sm leading-[1.7] text-[#666666] font-body">
-                                    Accelerate decision-making with quick feedback.
+                                    Web, mobil ve tablet desteği ile çalışanlarınız her yerden 
+                                    ve her zaman işlemlerine erişebilsin.
                                 </p>
                             </div>
                             <button className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition-colors">
@@ -225,15 +230,16 @@ export function FeaturesSection() {
                         </div>
                     </div>
 
-                    {/* Column 3: Task Attachments */}
+                    {/* Column 3: Analitik Raporlar & EBYS */}
                     <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
                         <div className="flex items-start justify-between mb-4">
                             <div>
                                 <h3 className="text-xl font-display font-medium tracking-tight text-[#000000] mb-2 leading-[1.3]">
-                                    Task Attachments
+                                    Analitik Raporlar & EBYS
                                 </h3>
                                 <p className="text-sm leading-[1.7] text-[#666666] font-body">
-                                    Easily share and access relevant documents and files directly.
+                                    Derinlikli analitik raporlar ve EBYS entegrasyonu ile 
+                                    belge yönetimini dijitalleştirin.
                                 </p>
                             </div>
                             <button className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition-colors">

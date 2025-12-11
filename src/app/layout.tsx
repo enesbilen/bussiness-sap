@@ -73,8 +73,63 @@ const instrumentSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Aerisap | SAP Clone",
-  description: "The operating system for business.",
+  title: {
+    default: "SAPport - SAP-ABAP Danışmanlık & Kurumsal Portal Çözümleri",
+    template: "%s | SAPport",
+  },
+  description: "SAPport ile SAP-ABAP danışmanlık hizmetleri ve Daisy kurumsal portal çözümüyle işletmenizin dijital dönüşümünü başlatın. SAP entegrasyonu, ABAP geliştirme ve kurumsal portal çözümleri.",
+  keywords: [
+    "SAP danışmanlık",
+    "SAP-ABAP",
+    "Daisy portal",
+    "SAP entegrasyonu",
+    "kurumsal portal",
+    "SAP HR",
+    "SAP FI/CO",
+    "SAP MM/SD",
+    "dijital dönüşüm",
+    "SAP danışman",
+    "ABAP geliştirme",
+    "SAP çözümleri",
+    "Türkiye SAP",
+    "Ankara SAP",
+  ],
+  authors: [{ name: "SAPport Bilişim Hizmetleri" }],
+  creator: "SAPport Bilişim Hizmetleri",
+  publisher: "SAPport Bilişim Hizmetleri",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://sapport.com.tr"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "tr_TR",
+    url: "https://sapport.com.tr",
+    siteName: "SAPport",
+    title: "SAPport - SAP-ABAP Danışmanlık & Kurumsal Portal Çözümleri",
+    description: "SAPport ile SAP-ABAP danışmanlık hizmetleri ve Daisy kurumsal portal çözümüyle işletmenizin dijital dönüşümünü başlatın.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SAPport - SAP-ABAP Danışmanlık & Kurumsal Portal Çözümleri",
+    description: "SAPport ile SAP-ABAP danışmanlık hizmetleri ve Daisy kurumsal portal çözümüyle işletmenizin dijital dönüşümünü başlatın.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -83,9 +138,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${clashGrotesk.variable} ${instrumentSans.variable}`}>
+    <html lang="tr" className={`${clashGrotesk.variable} ${instrumentSans.variable}`}>
       {/* Light background with subtle grid pattern optional */}
-      <body className="antialiased bg-background text-foreground font-body selection:bg-brand-green selection:text-black">
+        <body className="antialiased bg-background text-foreground font-body selection:bg-[#00AFFF] selection:text-white">
         {/* Grid Background */}
         <div className="fixed inset-0 z-[-1] bg-grid-pattern bg-grid-pattern opacity-[0.4] pointer-events-none" />
 

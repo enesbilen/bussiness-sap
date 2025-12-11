@@ -7,7 +7,7 @@ export function PreFooterCTA() {
     >
       <div className="mx-auto max-w-7xl p-5 rounded-3xl"
             style={{
-              background: "linear-gradient(rgb(183, 255, 51) 0%, rgb(219, 255, 153) 100%)"
+              background: "linear-gradient(rgb(153, 219, 255) 0%, rgb(0, 148, 230) 100%)"
             }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Sol Taraf - İçerik */}
@@ -15,17 +15,18 @@ export function PreFooterCTA() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm text-gray-600 text-sm font-medium shadow-sm mb-6">
               <Code className="w-4 h-4" />
-              <span>SAP-ABAP Development</span>
+              <span>Dijital Dönüşüm</span>
             </div>
 
             {/* Başlık */}
-            <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
-              Ready to Transform Your SAP-ABAP Workflow?
+            <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#1f1f1f] mb-6 leading-[1.2]">
+              Dijital Dönüşümünüze Başlamaya Hazır mısınız?
             </h2>
 
             {/* Açıklama */}
-            <p className="text-base sm:text-lg leading-[1.7] text-[#666666] mb-8 max-w-2xl mx-auto lg:mx-0 font-body">
-              Join thousands of developers and teams who are already using <span className="font-bold">sapport</span> to streamline their SAP-ABAP development process. Get started today and experience the difference.
+            <p className="text-md sm:text-lg leading-[1.7] text-[#c2c3c5] mb-8 max-w-2xl mx-auto lg:mx-0 font-body">
+              SAPPort ile SAP-ABAP danışmanlık hizmetleri ve <span className="font-bold text-[#ccc]">Daisy</span> kurumsal portal çözümüyle 
+              işletmenizin dijital dönüşümünü başlatın. Bugün başlayın ve farkı yaşayın.
             </p>
 
           </div>
@@ -34,27 +35,27 @@ export function PreFooterCTA() {
           <div className="grid grid-cols-2 gap-4">
             {/* Özellik 3 */}
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#b7ff33] to-[rgba(219,255,153,1)] flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#33B7FF] to-[#00AFFF] flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-gray-900" />
               </div>
               <h3 className="text-lg font-display font-bold tracking-tight text-[#000000] mb-2 leading-[1.3]">
-                Secure & Reliable
+                Güvenli & Güvenilir
               </h3>
               <p className="text-sm font-body leading-[1.7] text-[#666666]">
-                Enterprise-grade security for your projects
+                Kurumsal düzeyde güvenlik ve güvenilirlik
               </p>
             </div>
 
             {/* Özellik 4 */}
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#b7ff33] to-[rgba(219,255,153,1)] flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#33B7FF] to-[#00AFFF] flex items-center justify-center mb-4">
                 <Rocket className="w-6 h-6 text-gray-900" />
               </div>
               <h3 className="text-lg font-display font-bold tracking-tight text-[#000000] mb-2 leading-[1.3]">
-                Scale Easily
+                Kolay Ölçeklenebilir
               </h3>
               <p className="text-sm font-body leading-[1.7] text-[#666666]">
-                Grow your team and projects without limits
+                İşletmeniz büyüdükçe çözümlerimiz de büyür
               </p>
             </div>
           </div>

@@ -1,0 +1,63 @@
+{
+  "posts": [
+    {
+      "slug": "sap-s4hana-migration-rehberi-2025",
+      "title": "2027 Son Tarih Yaklaşıyor: S/4HANA’ya Sorunsuz ve Karlı Geçiş Yapmanın 10 Altın Kuralı",
+      "excerpt": "Brownfield mi Greenfield mi yoksa Selective Data Transition mü? Hangi yaklaşım size 6-12 ay kazandırır ve milyonlarca lira tasarruf sağlar? Gerçek müşteri hikayeleriyle detaylı rehber.",
+      "content": "## 2027’den Önce S/4HANA’ya Geçmezseniz Ne Olur?\n\nSAP ECC ana desteği 2027 sonunda bitiyor. 2028’den itibaren sadece ücretli extended maintenance olacak ve maliyetler %100 artacak. Daha da kötüsü: güvenlik yamaları duracak, yasal uyumluluk riskleri başlayacak.\n\nAma doğru planlanan bir S/4HANA projesi sadece zorunluluk değil, aynı zamanda şirket tarihinizin en büyük karlılık projesi olabilir.\n\n### Hangi Yaklaşım Size En Uygun?\n\n| Yaklaşım                  | Süre      | Maliyet      | Risk      | Kar Potansiyeli       |\n|---------------------------|-----------|--------------|-----------|-----------------------|\n| Greenfield (Yeni Kurulum) | 18–24 ay  | Yüksek       | Düşük     | Çok Yüksek (temiz süreç)|\n| Brownfield (Dönüşüm)      | 9–15 ay   | Orta         | Orta      | Orta                  |\n| Selective (Bluefield)     | 12–18 ay  | Orta-Yüksek  | Düşük     | Çok Yüksek (hibrit)    |\n\n### Gerçek Hayattan Örnekler\n- Türkiye’nin en büyük 3 üretim şirketinden biri **Selective Data Transition** ile 11 ayda geçti → yıllık 28 milyon TL tasarruf\n- Global perakende devi **Greenfield** tercih etti → süreç sayısı %52 azaldı, stok devir hızı %38 arttı\n\n### Başarı İçin Mutlaka Yapmanız Gereken 12 Adım\n1. SAP Readiness Check + Simplification Item Check (ücretsiz)\n2. Custom Code Impact Analysis (en az 3 ay ayırın!)\n3. Veri hacmi analizi & arşivleme planı\n4. Fiori aktivasyon stratejisi (en az 300 app)\n5. RISE with SAP mi GROW with SAP mi kararını verme\n6. Central Finance düşünüyorsanız şimdi karar verin zamanı\n7. Test otomasyonu (Tricentis ya da SAP’nin kendi araçları)\n8. Change management ve hiper-bakım planı\n9. Cutover planı (en fazla 48 saat downtime hedefi)\n10. Hypercare ekibi ve SLA’lar\n\nSAPport olarak 2016’dan beri 40+ başarılı S/4HANA projesi tamamladık. Size özel yol haritanızı ücretsiz çiziyoruz.",
+      "date": "2025-12-01",
+      "category": "S/4HANA",
+      "author": "SAPport",
+      "readTime": "12 dk"
+    },
+    {
+      "slug": "abap-restful-rap-masterclass",
+      "title": "2025’te ABAP Geliştiricisi Olmak: RAP + Clean Core + BTP ABAP Environment (Steampunk) Tam Rehber)",
+      "excerpt": "Google’da en çok aranan ABAP konuları: RAP, CDS View, OData v4, Behavior Definition, Managed vs Unmanaged, Draft, Side-by-Side Extensibility. Hepsini tek yazıda, çalışan kod örnekleriyle.",
+      "content": "## ABAP Ölmedi, Sadece Yeniden Doğdu!\n\n2025 itibariyle klasik Dynpro ve SE80 neredeyse tamamen terk edildi. Yeni nesil ABAP geliştiricisi artık şu teknolojileri bilmeden iş bulamaz:\n\n### 1. Restful ABAP Programming Model (RAP)\n- Managed Scenario (en çok tercih edilen)\n- Unmanaged Scenario with Draft\n- Behavior Definition & Implementation\n- Projection View’lar\n- Determinations, Validations, Actions\n\n### 2. BTP ABAP Environment (Steampunk)\n- abapGit entegrasyonu\n- Cloud’da versiyon kontrolü\n- CI/CD pipeline kurulumu (SAP CALM)\n\n### 3. Clean Core & Extensibility 2025 Kuralları\n- Core Data Services (CDS) ile her şey başlar\n- Released API & BAdI sadece izin verilenler\n- In-App Extensibility sınırları\n- Side-by-Side vs On-Stack karar matrisi\n\n### En Çok Sorulan 10 Kod Örneği\n1. Managed RAP BO with Draft + Early Numbering\n2. Late Numbering + External Key\n3. Action ile toplu onay/red mekanizması\n4. Determination ile otomatik alan doldurma\n5. Validation ile iş kuralı kontrolü\n6. Fiori Elements List Report + Object Page\n7. Value Help CDS ile custom search help\n8. Side-by-Side RAP BO (BTP)\n9. CAP vs RAP karşılaştırması\n10. Integration with Integration Suite (Cloud Integration)\n\nTüm kod örnekleri GitHub reposunda: github.com/sapport/rap-masterclass-2025\n\nSAPport Academy olarak her ay ücretsiz RAP Bootcamp düzenliyoruz.",
+      "date": "2025-11-20",
+      "category": "ABAP",
+      "author": "SAPport",
+      "readTime": "15 dk"
+    },
+    {
+      "slug": "fiori-elements-2025",
+      "title": "Fiori Elements ile 10 Kat Hızlı Uygulama Geliştirme: 2025 Güncel Template’ler ve Best Practice’ler",
+      "excerpt": "List Report, Object Page, Analytical List Page, Overview Page, Flexible Column Layout. En güncel Fiori Elements özellikleri ve %90 kod yazmadan uygulama nasıl yapılır?",
+      "content": "## Neden 2025’te Hala Freestyle UI5 Yazıyorsunuz?\n\nFiori Elements ile aynı uygulamayı 10 günde bitirirken, Freestyle’da 100 gün harcıyorsanız, artık tercih değil zorunluluk var.\n\n### 2025’te Yeni Gelen Fiori Elements Özellikleri\n- Multiple Views in List Report (çoklu tablo görünümü)\n- Mass Edit yeni versiyonu\n- Draft 2.0\n- Flexible Programming Model (MDK ile entegrasyon)\n- Manifest.json’da yeni annotation’lar\n\n### En Çok Kullanılan 7 Template\n1. List Report + Object Page (standart CRUD)\n2. Analytical List Page (sac ile entegrasyon)\n3. Worklist Page\n4. Overview Page (dashboard tarzı)\n5. Flexible Column Layout (3 kolon)\n6. Wizard template\n7. Form Entry Object Page\n\n### Performans İpuçları\n- @ObjectModel.query.implementedBy yerine direkt CDS\n- $expand derinliği max 3\n- Server-side paging ve filtering\n- Annotation @UI.hidden stratejik kullanımı\n\nSAPport’un hazırladığı 50+ hazır Fiori Elements template paketini ücretsiz indirebilirsiniz.",
+      "date": "Fiori",
+      "author": "SAPport",
+      "readTime": "10 dk"
+    },
+    {
+      "slug": "clean-core-2025-zorunluluk",
+      "title": "Clean Core Artık Opsiyon Değil: 2025’te SAP’den Gelen Yeni Zorunlu Kurallar ve Cezalar",
+      "excerpt": "SAP, 2025’ten itibaren Clean Core skorunu düşük olan müşterilere upgrade engeli koyuyor. Clean Core skorunuzu nasıl 90+ yaparsınız?",
+      "content": "## SAP’nin 2025 Clean Core Politikası\n- Clean Core skoru 85’in altında olan sistemler RISE with SAP sözleşmelerinde ek ücret ödeyecek\n- 2026’dan itibaren skor 80’in altında olanlar upgrade yapamayacak\n\n### Clean Core Skoru Nasıl Hesaplanıyor?\n1. Modifikasyon sayısı\n2. Released olmayan BAdI kullanımı\n3. Z table & Z program hacmi\n4. Classic extensibility kullanımı\n\n### Hemen Uygulayabileceğiniz 15 Madde\n1. Custom Code Adaptability Dashboard (CCA) çalıştırın\n2. Kullanılmayan Z kodlarını silin (en az %40’ı kullanılmıyor)\n3. In-App Extensibility ile BAdI’leri yeniden yazın\n4. Side-by-Side’a taşıyabileceğiniz tüm uygulamaları belirleyin\n5. SAP BTP’de ABAP Environment açın\n\nSAPport Clean Core Assessment hizmeti 2 haftada skorunuzu 30 puan artırıyor (garantili).",
+      "date": "2025-11-10",
+      "category": "Cloud",
+      "author": "SAPport",
+      "readTime": "9 dk"
+    },
+    {
+      "slug": "sap-btp-2025-roadmap",
+      "title": "SAP BTP 2025: En Çok Beklenen 20 Yeni Özellik ve Türkiye’deki İlk Kullanım Örnekleri",
+      "excerpt": "Joule entegrasyonu, ABAP Environment genel erişim, Kyma 2.0, AI Builder, Event Mesh yeni versiyonu. BTP’yi hala kullanmıyorsanız çok geç olmadan başlayın.",
+      "content": "## BTP Kullanımı Türkiye’de %310 Arttı (2024-2025)\n\n### 2025’te En Çok Konuşulan BTP Konuları\n1. SAP Build (low-code/no-code)\n2. Joule Copilot entegrasyonu\n3. ABAP Environment fiyat düşüşü\n4. Integration Suite + Event Mesh\n5. AI Core & AI Foundation\n\n### Türkiye’den Başarılı 5 Vaka\n- Koç Holding → 120+ mikroservis BTP’de\n- Türk Telekom → IoT projesi 8 milyon cihaz\n- Arçelik → AI destekli talep tahminle %27 iyileşme\n\nSAPport, Türkiye’de en fazla SAP Certified BTP danışmanına sahip firma. BTP Proof of Concept’inizi 4 haftada ücretsiz yapıyoruz.",
+      "date": "2025-11-05",
+      "category": "Cloud",
+      "author": "SAPport",
+      "readTime": "11 dk"
+    },
+    {
+      "slug": "sap-performans-optimizasyon-2025",
+      "title": "HANA Veritabanında 100 Kat Hız Artışı Sağlayan 25 Gizli Teknik (2025 Güncel)",
+      "excerpt": "ST05, SAT, ST12, HANA Studio, DBA Cockpit. En çok aratılan performans araçları ve gerçek hayatta işe yarayan optimizasyon teknikleri.",
+      "content": "## Yavaş SAP Sistemi Şirketinize Ne Kadara Mal Oluyor?\nOrtalama bir kullanıcı günde 18 dakika SAP’nin yavaşlığından dolayı bekliyor → yıllık 45 milyon TL kayıp (500 kullanıcı için).\n\n### 2025’in En Etkili 25 Optimizasyon Tekniği\n1. Expensive SQL listesini haftada bir kontrol\n2. Plan Cache analizi ve plan silme\n3. Column Store vs Row Store doğru kullanımı\n4. Partitioning stratejileri (range, hash, round-robin)\n5. Calculation View yerine CDS View tercih edin\n6. Parallel processing derecesini artırın\n7. Memory management (statement memory limit)\n8. Delta merge optimizasyonu\n9. Table placement (hot/warm/cold)\n10. Index server vs name server yük dengesi\n\nSAPport Performance Rescue ekibi 48 saatte sisteminizi %200 hızlandırıyor (sözleşmeli).",
+      "date": "2025-10-30",
+      "category": "Optimizasyon",
+      "author": "SAPport",
+      "readTime": "14 dk"
+    }
+  ]
+}

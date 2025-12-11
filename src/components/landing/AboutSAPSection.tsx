@@ -1,19 +1,20 @@
 import Image from "next/image";
-import { Monitor, Users, Download, Star, Check, Apple, Square, Layers  } from "lucide-react";
+import { Monitor, Users, Download, Star, Check, Apple, Square, Layers, ArrowUpRight } from "lucide-react";
 
 const screens = [
-    "/sap-images/features/screen1.avif",
-    "/sap-images/features/screen2.avif",
-    "/sap-images/features/screen3.avif",
-    "/sap-images/features/screen4.avif",
-    "/sap-images/features/screen5.avif",
+    "/daisy_screen/zimmet_talep_listesi_3.jpg",
+    "/daisy_screen/personel_raporu_1.jpg",
+    "/daisy_screen/performansdegerlendirme.jpg",
+    "/daisy_screen/organizasyon_agaci_1.jpg",
+    "/daisy_screen/bodro_listesi_1.jpg",
+    "/daisy_screen/egitim_yonetim_1.jpg",
 ];
 
 const stats = [
-    { icon: Users, text: "400K+ Active users all over the world" },
-    { icon: Download, text: "600K+ Downloads Worldwide" },
-    { icon: Star, text: "4.4+ Positive Customer Ratings" },
-    { icon: Check, text: "Current Version 2.1" },
+    { icon: Users, text: "SAP Sistemine Tam Entegre" },
+    { icon: Download, text: "MS Active Directory Uyumlu" },
+    { icon: Star, text: "Mobil, Web ve Tablet Desteği" },
+    { icon: Check, text: "Organik SAP Bağlantısı" },
 ];
 
 function WindowsIcon({ className }: { className?: string }) {
@@ -28,22 +29,24 @@ export function AboutSAPSection() {
     return (
         <div className="relative py-20 sm:py-24 px-6 lg:px-8 bg-white overflow-hidden">
             <div className="mx-auto max-w-7xl">
-                {/* Desktop App Tag */}
+                {/* Daisy Portal Tag */}
                 <div className="flex justify-center mb-6">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 text-gray-600 text-sm font-medium shadow-sm">
                         <Monitor className="w-4 h-4" />
-                        <span>Desktop App</span>
+                        <span>Kurumsal Portal</span>
                     </div>
                 </div>
 
                 {/* Main Heading */}
                 <h2 className="text-center text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
-                    Download SAP Desktop Application
+                    Daisy: SAP&apos;nizin Üzerine Kurulu Kurumsal Portal
                 </h2>
 
                 {/* Description */}
                 <p className="text-center text-base sm:text-lg leading-[1.7] text-[#666666] max-w-2xl mx-auto mb-12 font-body">
-                    Elevate your project management experience with SAP&apos;s desktop app. Seamlessly access powerful tools, collaborate with your team, and stay organized right from your desktop.
+                    Daisy, SAP sisteminize tam entegre çalışan, organik bağlantılı ve aynı veritabanını paylaşan 
+                    web tabanlı bir kurumsal portal çözümüdür. SAP bilmeyen çalışanlarınız bile kolayca 
+                    işlemlerini yapabilsin.
                 </p>
 
                 {/* Main Content Grid */}
@@ -67,15 +70,14 @@ export function AboutSAPSection() {
                                     screens.map((screen, index) => (
                                         <div
                                             key={`set-${setIndex}-${index}`}
-                                            className="flex-shrink-0 w-[600px] h-auto"
+                                            className="flex-shrink-0 w-[600px] h-[400px] relative overflow-hidden rounded-lg shadow-lg"
                                         >
                                             <Image
                                                 src={screen}
                                                 alt={`SAP Desktop App Screenshot ${index + 1}`}
-                                                width={600}
-                                                height={400}
-                                                className="w-full rounded-lg shadow-lg"
-                                                style={{ height: 'auto' }}
+                                                fill
+                                                className="object-cover"
+                                                sizes="600px"
                                             />
                                         </div>
                                     ))
@@ -87,10 +89,11 @@ export function AboutSAPSection() {
                     {/* Right: Explore Section */}
                     <div className="lg:col-span-1">
                         <h3 className="text-2xl font-display font-medium tracking-tight text-[#000000] mb-2 leading-[1.3]">
-                            Explore Our Desktop App
+                            Daisy&apos;yi Keşfedin
                         </h3>
                         <p className="text-sm leading-[1.7] text-[#666666] mb-4 font-body">
-                            Experience the power of SAP&apos;s desktop application. Browse through our gallery for a glimpse of its intuitive interface.
+                            Papatya metaforu: Merkez SAP sisteminiz, yapraklar ise dijital süreçleriniz. 
+                            Daisy ile tüm süreçlerinizi tek bir platformdan yönetin.
                         </p>
 
                         {/* Stats Cards */}
@@ -110,16 +113,15 @@ export function AboutSAPSection() {
                                 );
                             })}
                         </div>
-                        {/* Download Buttons */}
-                        <div className="flex items-center justify-center mt-5 gap-1">
-                            <button className="flex items-center gap-2 px-2 py-3 rounded-lg bg-[#1F1F1F] text-white font-body font-medium hover:bg-black transition-colors">
-                                <span>Download For Mac</span>
-                                <Apple className="w-5 h-5" />
-                            </button>
-                            <button className="flex items-center gap-2 px-2 py-3 rounded-lg bg-[#1F1F1F] text-white font-body font-medium hover:bg-black transition-colors">
-                                <span>Download For Windows</span>
-                                <WindowsIcon className="w-5 h-5 text-white" />
-                            </button>
+                        {/* CTA Buttons */}
+                        <div className="flex flex-col items-center justify-center mt-5 gap-2">
+                            <a href="/daisy" className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#1F1F1F] text-white font-body font-medium hover:bg-black transition-colors">
+                                <span>Daisy Hakkında Daha Fazla</span>
+                                <ArrowUpRight className="w-5 h-5" />
+                            </a>
+                            <a href="/hizmetlerimiz" className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg border border-gray-200 bg-white text-[#666666] font-body font-medium hover:bg-gray-50 transition-colors">
+                                <span>Danışmanlık Hizmetleri</span>
+                            </a>
                         </div>
                     </div>
                 </div>

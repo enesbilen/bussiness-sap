@@ -12,11 +12,11 @@
     --color-bg-elevated: #ffffff;
     /* Hafif yükseltilmiş kartlar (gölge ile ayrılır) */
 
-    /* Ana Vurgu Rengi – Görseldeki parlak lime yeşili */
-    --color-accent-primary: #afff00;
-    /* Butonlar, progress çemberleri, ikonlar */
-    --color-accent-primary-hover: #94e600;
-    /* Hover için biraz daha koyu */
+    /* Ana Vurgu Rengi – Modern mavi tonları */
+    --color-accent-primary: #00AFFF;
+    /* Butonlar, progress çemberleri, ikonlar - Mavi */
+    --color-accent-primary-hover: #0094E6;
+    /* Hover için biraz daha koyu - Mavi */
 
     /* İsteğe bağlı ekstra vurgular (görselde az kullanılıyor ama uyumlu)
   --color-accent-blue:      #3b82f6;
@@ -34,7 +34,7 @@
     /* Border ve Gölge */
     --color-border: rgba(0, 0, 0, 0.08);
     --color-border-light: rgba(0, 0, 0, 0.05);
-    --color-border-accent: #afff00;
+    --color-border-accent: #00AFFF;
 
     /* Grid deseni için (görseldeki hafif kareli arka plan) */
     --color-grid: #f0f0f0;

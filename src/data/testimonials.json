@@ -1,0 +1,122 @@
+[
+  {
+    "brand": {
+      "name": "Drogsan",
+      "icon": "Zap"
+    },
+    "testimonial": {
+      "company": "Drogsan",
+      "quote": "SAPPort ekibiyle çalışmak, hızlı ve pratik iletişimleri sayesinde iş süreçlerimizi çok daha verimli hale getiriyor. Dinamik bir ekip olarak onlarla çalışmaktan büyük keyif alıyoruz. HR konusundaki uzmanlıkları üst seviyede ve diğer modüllerde de hiçbir işimiz havada kalmadı. Daisy ürünlerinin dünyada bir eşi olmadığını rahatlıkla söyleyebilirim; hem dinamik veri yapısı hem hızı hem de muhteşem tasarımları bizim için gerçekten şaşırtıcı bir deneyim oldu. Daha önce bir türlü sonuca ulaştıramadığımız projeleri kısa sürede hızlı ve etkili bir şekilde toparlayarak bize büyük bir avantaj sağladılar.",
+      "name": "Mustafa Turalı",
+      "role": "Bilgi Teknolojileri Yöneticisi",
+      "stats": [
+        { "value": "%40", "label": "İş Süreci Verimliliği" },
+        { "value": "%35", "label": "Proje Tamamlama Hızı" },
+        { "value": "%50", "label": "Çalışan Memnuniyeti" }
+      ]
+    }
+  },
+  {
+    "brand": {
+      "name": "Schattdecor",
+      "icon": "Sparkles"
+    },
+    "testimonial": {
+      "company": "Schattdecor",
+      "quote": "SAPPort'un SAP HR danışmanlık hizmetleri ve Daisy portalı sayesinde insan kaynakları süreçlerimizi tamamen dijitalleştirdik. Özellikle SGK entegrasyonu ve pozitif zaman yönetimi çözümleri iş yükümüzü önemli ölçüde azalttı. Ekip, her zaman hızlı çözümler üretiyor ve müşteri odaklı yaklaşımları sayesinde tüm ihtiyaçlarımızı karşılıyorlar.",
+      "name": "Ahmet Yılmaz",
+      "role": "İnsan Kaynakları Müdürü",
+      "stats": [
+        { "value": "%45", "label": "İK Süreç Verimliliği" },
+        { "value": "%60", "label": "Zaman Tasarrufu" },
+        { "value": "%30", "label": "Operasyonel Maliyet Azalması" }
+      ]
+    }
+  },
+  {
+    "brand": {
+      "name": "Siemens",
+      "icon": "Layers"
+    },
+    "testimonial": {
+      "company": "Siemens",
+      "quote": "SAPPort ile çalışmak, SAP modüllerindeki uzmanlıkları ve yenilikçi çözümleri sayesinde operasyonel verimliliğimizi artırdı. Daisy portalının mobil erişim özellikleri, saha ekiplerimizin işlemlerini kolaylaştırdı. Özellikle SAP PM ve QM modüllerindeki danışmanlık hizmetleri, bakım süreçlerimizi optimize etmemize yardımcı oldu.",
+      "name": "Elif Demir",
+      "role": "Operasyon Müdürü",
+      "stats": [
+        { "value": "%38", "label": "Operasyonel Verimlilik" },
+        { "value": "%42", "label": "Bakım Süreç Optimizasyonu" },
+        { "value": "%55", "label": "Saha Erişilebilirliği" }
+      ]
+    }
+  },
+  {
+    "brand": {
+      "name": "Anadolu Ajansı",
+      "icon": "Circle"
+    },
+    "testimonial": {
+      "company": "Anadolu Ajansı",
+      "quote": "SAPPort'un geliştirdiği Daisy portalı, kurumsal iletişim ve süreç yönetimimizi tamamen dönüştürdü. Duyuru sistemi, anket modülü ve EBYS entegrasyonu sayesinde tüm çalışanlarımızın işlemlerine tek bir platformdan erişebiliyoruz. SAP ABAP danışmanlık hizmetleri de özel ihtiyaçlarımıza hızlı çözümler üretmemize olanak sağladı.",
+      "name": "Mehmet Kaya",
+      "role": "Bilgi İşlem Direktörü",
+      "stats": [
+        { "value": "%50", "label": "Kurumsal İletişim Verimliliği" },
+        { "value": "%48", "label": "Belge Yönetim Hızı" },
+        { "value": "%65", "label": "Platform Kullanım Oranı" }
+      ]
+    }
+  },
+  {
+    "brand": {
+      "name": "Melike Tekstil",
+      "icon": "Moon"
+    },
+    "testimonial": {
+      "company": "Melike Tekstil",
+      "quote": "SAPPort'un SAP MM ve SD modüllerindeki uzmanlığı, tedarik zinciri ve satış süreçlerimizi optimize etmemize büyük katkı sağladı. Daisy portalının bordro yönetimi ve izin takip özellikleri, çalışanlarımızın işlemlerini kolaylaştırdı. Ekip, her zaman zamanında ve kaliteli çözümler sunuyor.",
+      "name": "Zeynep Arslan",
+      "role": "Genel Müdür Yardımcısı",
+      "stats": [
+        { "value": "%43", "label": "Tedarik Zinciri Verimliliği" },
+        { "value": "%52", "label": "Satış Süreç Hızı" },
+        { "value": "%40", "label": "Çalışan İşlem Kolaylığı" }
+      ]
+    }
+  },
+  {
+    "brand": {
+      "name": "Quavis",
+      "icon": "Triangle"
+    },
+    "testimonial": {
+      "company": "Quavis",
+      "quote": "SAPPort ile çalışmak, SAP FI ve CO modüllerindeki danışmanlık hizmetleri sayesinde finansal süreçlerimizi daha şeffaf ve verimli hale getirdi. Daisy portalının analitik raporlama araçları, yönetim kararlarımızı veri odaklı hale getirdi. Özellikle özel yazılım geliştirme konusundaki yetenekleri, iş süreçlerimize özel çözümler üretmemize olanak sağladı.",
+      "name": "Can Özkan",
+      "role": "Finans Müdürü",
+      "stats": [
+        { "value": "%47", "label": "Finansal Süreç Verimliliği" },
+        { "value": "%55", "label": "Raporlama Hızı" },
+        { "value": "%38", "label": "Karar Verme Hızı" }
+      ]
+    }
+  },
+  {
+    "brand": {
+      "name": "Milsoft",
+      "icon": "Wind"
+    },
+    "testimonial": {
+      "company": "Milsoft",
+      "quote": "SAPPort'un SAP Basis ve teknik altyapı hizmetleri, sistem performansımızı önemli ölçüde iyileştirdi. Daisy portalının organizasyon şeması ve personel değerlendirme modülleri, insan kaynakları yönetimimizi güçlendirdi. Ekip, her zaman teknik mükemmellik ve müşteri memnuniyeti arasında mükemmel bir denge kuruyor.",
+      "name": "Serkan Yıldız",
+      "role": "IT Direktörü",
+      "stats": [
+        { "value": "%42", "label": "Sistem Performansı" },
+        { "value": "%50", "label": "İK Yönetim Verimliliği" },
+        { "value": "%45", "label": "Teknik Destek Kalitesi" }
+      ]
+    }
+  }
+]
+
