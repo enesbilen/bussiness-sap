@@ -14,8 +14,8 @@ export async function sendContactEmail(data: ContactFormData): Promise<void> {
   // Environment variables kontrolü
   const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
   const smtpPort = parseInt(process.env.SMTP_PORT || "587", 10);
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
+  const smtpUser = process.env.SMTP_USER || "ebilen@sapport.com.tr";
+  const smtpPass = process.env.SMTP_PASS || "Enes1234??";
   const smtpFrom = process.env.SMTP_FROM || smtpUser;
   const smtpTo = process.env.SMTP_TO || smtpUser;
 
