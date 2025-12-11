@@ -130,6 +130,16 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: [
+      { url: "/sap-images/logo/logo-main.svg", type: "image/svg+xml" },
+      { url: "/sap-images/logo/logo-main.svg", type: "image/svg+xml", sizes: "any" },
+    ],
+    apple: [
+      { url: "/sap-images/logo/logo-main.svg", sizes: "180x180", type: "image/svg+xml" },
+    ],
+    shortcut: "/sap-images/logo/logo-main.svg",
+  },
 };
 
 export default function RootLayout({
