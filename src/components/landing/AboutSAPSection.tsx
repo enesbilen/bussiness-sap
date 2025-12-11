@@ -27,7 +27,7 @@ function WindowsIcon({ className }: { className?: string }) {
 
 export function AboutSAPSection() {
     return (
-        <div className="relative py-20 sm:py-24 px-6 lg:px-8 bg-white overflow-hidden">
+        <div className="relative py-12 sm:py-20 px-6 lg:px-8 bg-white overflow-hidden">
             <div className="mx-auto max-w-7xl">
                 {/* Daisy Portal Tag */}
                 <div className="flex justify-center mb-6">

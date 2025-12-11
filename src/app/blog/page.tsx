@@ -35,7 +35,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative isolate py-20 sm:py-32 px-6 lg:px-8 overflow-hidden">
+      <section className="relative isolate py-12 sm:py-24 px-6 lg:px-8 overflow-hidden">
         {/* Background Image - hero-main.png */}
         <div className="absolute inset-0 z-[-1]">
           <Image

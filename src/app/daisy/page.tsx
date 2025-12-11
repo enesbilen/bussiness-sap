@@ -32,7 +32,7 @@ export default function DaisyPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative isolate py-20 sm:py-32 px-6 lg:px-8 overflow-hidden">
+      <section className="relative isolate py-12 sm:py-24 px-6 lg:px-8 overflow-hidden">
         {/* Background Image - hero-main.png */}
         <div className="absolute inset-0 z-[-1]">
           <Image
@@ -74,7 +74,7 @@ export default function DaisyPage() {
       </section>
 
       {/* Papatya Metaforu Section */}
-      <section className="py-20 px-6 lg:px-8 bg-gray-50">
+      <section className="py-12 px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
@@ -124,8 +124,226 @@ export default function DaisyPage() {
         </div>
       </section>
 
+      {/* Neden Daisy Section */}
+      <section className="py-12 px-6 lg:px-8 bg-white">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
+              Neden Daisy?
+            </h2>
+            <p className="text-lg leading-[1.7] text-[#666666] max-w-3xl mx-auto font-body">
+              Daisy, işletmenizin dijital dönüşüm yolculuğunda size eşsiz avantajlar sunar.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Tek Platform, Tüm İhtiyaçlar",
+                desc: "Performans değerlendirme, eğitim, anket, duyuru, dijital onay süreçleri, raporlama gibi birçok ihtiyacı ek yazılım veya entegrasyon gerektirmeden karşılar."
+              },
+              {
+                title: "Merkezi Yönetim ve Düşük Maliyet",
+                desc: "Tüm süreçleri tek bir noktadan yönetmenizi sağlar. Ek lisans maliyetlerini ve dağınık yazılımları ortadan kaldırır."
+              },
+              {
+                title: "Güvenli ve Tamamen Sizin Kontrolünüzde",
+                desc: "Mevcut SAP sisteminiz üzerine kuruludur. Verileriniz şirketinizde kalır; üçüncü taraf bulutlara taşınmaz. Ek güvenlik katmanları ve şifreleme kullanır."
+              },
+              {
+                title: "Doğal SAP Entegrasyonu",
+                desc: "ABAP diliyle geliştirilmiştir ve SAP'nin doğal bir parçası olarak çalışır. Ek entegrasyon gerektirmez."
+              },
+              {
+                title: "Özelleştirilebilir",
+                desc: "Şirketinizin taleplerine göre esnek, özelleştirilebilir ve geliştirilebilir bir yapıya sahiptir."
+              },
+              {
+                title: "Modern ve Mobil",
+                desc: "Hem Android hem iOS uygulamalarıyla modern bir kullanıcı deneyimi sunar."
+              },
+            ].map((advantage, index) => (
+              <div key={index} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <h3 className="text-xl font-display font-medium tracking-tight text-[#000000] mb-3 leading-[1.3]">
+                  {advantage.title}
+                </h3>
+                <p className="text-sm leading-[1.7] text-[#666666] font-body">
+                  {advantage.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Süreç Dijitalleştirme Section */}
+      <section className="py-12 px-6 lg:px-8 bg-gray-50">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
+              Daisy ile Süreç Dijitalleştirme
+            </h2>
+            <p className="text-lg leading-[1.7] text-[#666666] max-w-3xl mx-auto font-body">
+              Kağıt masrafları ve tutarsız kayıtlar ortadan kalkar; hızlı, güvenli ve mobil bildirimlerle desteklenen dijital süreçler oluşur.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "İzin ve Devamsızlık Yönetimi",
+                desc: "İzin süreçlerini uçtan uca dijitalleştirir. SAP'ye otomatik kaydedilir, PDKS verileriyle entegre çalışır."
+              },
+              {
+                title: "Masraf Bildirimleri",
+                desc: "Masraf süreçlerini dijitalleştirir, onay süreci sonrası SAP'ye otomatik işler."
+              },
+              {
+                title: "SAS Onayları",
+                desc: "SAP üzerinde kurgulanan SAS süreçleriyle birebir entegre çalışır. Yöneticiler onaylarını web veya mobil üzerinden tamamlar."
+              },
+              {
+                title: "Zimmet Yönetimi",
+                desc: "Tüm zimmet süreçleri dijitalleşir ve raporlanabilir hale gelir."
+              },
+              {
+                title: "Bordro Onayları",
+                desc: "Çalışanlar bordrolarını Daisy üzerinden görüntüleyip onaylayabilir."
+              },
+            ].map((process, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 border border-gray-200">
+                <h3 className="text-xl font-display font-medium tracking-tight text-[#000000] mb-3 leading-[1.3]">
+                  {process.title}
+                </h3>
+                <p className="text-sm leading-[1.7] text-[#666666] font-body">
+                  {process.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <p className="text-base italic text-[#666666] font-body">
+              Daisy, dijitalleşmesini istediğiniz tüm süreçleri çatısı altına alabilecek şekilde tasarlanmıştır.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Kurumsal İletişim Özellikleri Section */}
+      <section className="py-12 px-6 lg:px-8 bg-white">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
+              Kurumsal İletişim Özellikleri
+            </h2>
+            <p className="text-lg leading-[1.7] text-[#666666] max-w-3xl mx-auto font-body">
+              Daisy, şirket içi iletişimi merkezileştirerek kurumsal kimliğin güçlenmesine katkıda bulunur.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Rehber ve Chat",
+                desc: "Şirket içi rehber ve anlık mesajlaşma tek platformda."
+              },
+              {
+                title: "E-Posta ile Duyurular",
+                desc: "Şablonlar hazırlayabilir, kaydedebilir, zamanlayabilir ve istediğiniz listeye gönderebilirsiniz."
+              },
+              {
+                title: "Doküman Yönetimi",
+                desc: "Dokümanlarınızı kategorize edebilir, versiyonlayabilir ve yetki bazlı erişim tanımlayabilirsiniz."
+              },
+              {
+                title: "Daisy Anketor",
+                desc: "Kendi anketlerinizi oluşturup ilgili birimlere açabilir, sonuçlarını analiz edebilirsiniz."
+              },
+              {
+                title: "SMS ile Duyuru",
+                desc: "E-posta duyurularına ek olarak SMS gönderimleri de yapabilirsiniz."
+              },
+            ].map((feature, index) => (
+              <div key={index} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <h3 className="text-xl font-display font-medium tracking-tight text-[#000000] mb-3 leading-[1.3]">
+                  {feature.title}
+                </h3>
+                <p className="text-sm leading-[1.7] text-[#666666] font-body">
+                  {feature.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Yönetsel Raporlamalar Section */}
+      <section className="py-12 px-6 lg:px-8 bg-gray-50">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
+            Yönetsel Raporlamalar
+          </h2>
+          <p className="text-lg leading-[1.7] text-[#666666] font-body">
+            Daisy, yöneticilere anlık, güvenilir ve anlamlı verilere hızlı erişim sağlar. Karar süreçlerini hızlandıran modern raporlama araçları sunar.
+          </p>
+        </div>
+      </section>
+
+      {/* Daisy Uygulamaları Section */}
+      <section className="py-12 px-6 lg:px-8 bg-white">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
+              Daisy Uygulamaları
+            </h2>
+            <p className="text-lg leading-[1.7] text-[#666666] max-w-3xl mx-auto font-body">
+              Daisy platformu üzerinde çalışan özel uygulamalar ile iş süreçlerinizi optimize edin.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Eğitim Modülü",
+                items: ["Eğitim içeriklerinin yönetimi", "Sınav ve değerlendirme sistemi", "Eğitim planlama ve katılımcı yönetimi"]
+              },
+              {
+                title: "Performans Değerlendirme",
+                items: ["Hedef belirleme", "Dönem yönetimi", "Kriter tanımı", "Onay akışları", "Gelişmiş raporlama"]
+              },
+              {
+                title: "Biriş Helpdesk",
+                items: ["Kanban mantığıyla hızlı ve etkili destek", "İş emri, destek talebi yönetimi"]
+              },
+              {
+                title: "Zimmet & Ekipman Yönetimi",
+                items: ["SAP PM entegre veya bağımsız çalışabilir", "Onay süreçleri", "Raporlamaya hazır yapı"]
+              },
+              {
+                title: "Pozitif Zaman Yönetimi",
+                items: ["PDKS entegrasyonu", "Zaman olaylarının otomatik işlenmesi"]
+              },
+              {
+                title: "Kartvizit & Personel Kartı Basımı",
+                items: ["SAP verilerinizle güncel kartvizit oluşturma", "Kurum giriş/tanıtım kartı üretimi"]
+              },
+            ].map((app, index) => (
+              <div key={index} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <h3 className="text-xl font-display font-medium tracking-tight text-[#000000] mb-4 leading-[1.3]">
+                  {app.title}
+                </h3>
+                <ul className="space-y-2">
+                  {app.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start gap-2">
+                      <span className="text-[#00AFFF] mt-1">•</span>
+                      <span className="text-sm leading-[1.7] text-[#666666] font-body">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Temel Modüller Section */}
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section className="py-12 px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
@@ -163,7 +381,7 @@ export default function DaisyPage() {
       </section>
 
       {/* Avantajlar Section */}
-      <section className="py-20 px-6 lg:px-8 bg-gray-50">
+      <section className="py-12 px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
@@ -199,7 +417,7 @@ export default function DaisyPage() {
       </section>
 
       {/* SSS Section */}
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section className="py-12 px-6 lg:px-8 bg-white">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
@@ -208,6 +426,26 @@ export default function DaisyPage() {
           </div>
           <div className="space-y-6">
             {[
+              {
+                q: "Daisy eski sistemlerle çalışır mı?",
+                a: "Evet. Mevcut SAP yapınızla uyumlu şekilde çalışır."
+              },
+              {
+                q: "Daisy'ye nasıl giriş yapılır?",
+                a: "Şirketinizin belirlediği kimlik doğrulama yöntemleri (SSO, AD, SAP kullanıcıları vb.) ile giriş sağlanır."
+              },
+              {
+                q: "Daisy güvenli midir?",
+                a: "Veriler SAP içerisinde tutulur, ek güvenlik katmanları ve şifreleme ile korunur."
+              },
+              {
+                q: "Daisy için ek SAP lisansı gerekir mi?",
+                a: "Hayır. Ek bir SAP lisansı gerektirmez."
+              },
+              {
+                q: "Mevcut uygulamalarımız Daisy ile entegre olur mu?",
+                a: "Evet. İstenirse mevcut sistemlerinizle entegrasyon sağlanabilir."
+              },
               {
                 q: "Daisy nedir ve ne işe yarar?",
                 a: "Daisy, şirket çalışanlarınızın web, mobil ve tablet cihazlar üzerinden erişebileceği bir kurumsal portal sistemidir. İzin talepleri, masraf yönetimi, bordro görüntüleme, duyurular ve analitik raporlar gibi işlemleri dijital ortamda yönetmenizi sağlar."
@@ -247,7 +485,7 @@ export default function DaisyPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 lg:px-8 ">
+      <section className="py-12 px-6 lg:px-8 ">
         <div className="mx-auto max-w-4xl text-center bg-gradient-to-br from-[#33B7FF] to-[#00AFFF] rounded-xl p-6">
           <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
             Daisy ile Dijital Dönüşümünüze Başlayın

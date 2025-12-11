@@ -10,10 +10,44 @@ export function ContactSection() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Form gönderme işlemi burada yapılabilir
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          subject: "genel", // Ana sayfa formu için varsayılan konu
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Bir hata oluştu");
+      }
+
+      setSubmitStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -26,7 +60,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-24 px-6 lg:px-8 bg-white">
+    <section id="contact" className="py-12 sm:py-20 px-6 lg:px-8 bg-white">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Sol Taraf - İletişim Bilgileri */}
@@ -168,11 +202,24 @@ export function ContactSection() {
               <form onSubmit={handleSubmit}>
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gray-900 text-white font-body font-semibold rounded-xl hover:bg-gray-800 transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-gray-900 text-white font-body font-semibold rounded-xl hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Gönder
+                  {isSubmitting ? "Gönderiliyor..." : "Gönder"}
                 </button>
               </form>
+
+              {/* Success/Error Message */}
+              {submitStatus === "success" && (
+                <div className="p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm font-body">
+                  Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.
+                </div>
+              )}
+              {submitStatus === "error" && (
+                <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm font-body">
+                  Bir hata oluştu. Lütfen tekrar deneyin veya doğrudan e-posta ile iletişime geçin.
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { ArrowRight, Code, Zap, Shield, Rocket } from "lucide-react";
 export function PreFooterCTA() {
   return (
     <section 
-      className="relative py-20 sm:py-24 px-6 lg:px-8 overflow-hidden"
+      className="relative py-12 sm:py-20 px-6 lg:px-8 overflow-hidden"
     >
       <div className="mx-auto max-w-7xl p-5 rounded-3xl"
             style={{
@@ -24,8 +24,8 @@ export function PreFooterCTA() {
             </h2>
 
             {/* Açıklama */}
-            <p className="text-md sm:text-lg leading-[1.7] text-[#c2c3c5] mb-8 max-w-2xl mx-auto lg:mx-0 font-body">
-              SAPPort ile SAP-ABAP danışmanlık hizmetleri ve <span className="font-bold text-[#ccc]">Daisy</span> kurumsal portal çözümüyle 
+            <p className="text-md sm:text-lg leading-[1.7] text-[#2a2a2a] mb-8 max-w-2xl mx-auto lg:mx-0 font-body">
+              SAPPort ile SAP-ABAP danışmanlık hizmetleri ve <span className="font-bold text-[#000]">Daisy</span> kurumsal portal çözümüyle 
               işletmenizin dijital dönüşümünü başlatın. Bugün başlayın ve farkı yaşayın.
             </p>
 

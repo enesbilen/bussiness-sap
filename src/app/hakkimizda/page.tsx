@@ -30,7 +30,7 @@ export default function HakkimizdaPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative isolate py-20 sm:py-32 px-6 lg:px-8 overflow-hidden">
+      <section className="relative isolate py-12 sm:py-24 px-6 lg:px-8 overflow-hidden">
         {/* Background Image - hero-main.png */}
         <div className="absolute inset-0 z-[-1]">
           <Image
@@ -72,7 +72,7 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Vizyon & Misyon Section */}
-      <section className="py-20 px-6 lg:px-8 bg-gray-50">
+      <section className="py-12 px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Vizyon */}
@@ -84,8 +84,8 @@ export default function HakkimizdaPage() {
                 Vizyonumuz
               </h2>
               <p className="text-base leading-[1.7] text-[#666666] font-body">
-                Türkiye&apos;nin dijital dönüşüm sürecinde lider teknoloji şirketi olmak ve global 
-                pazarda söz sahibi bir marka haline gelmek.
+                Türkiye&apos;nin dijital dönüşümünde lider teknoloji şirketi olmak ve global 
+                pazarda güçlü bir marka olarak yer almak.
               </p>
             </div>
 
@@ -98,9 +98,8 @@ export default function HakkimizdaPage() {
                 Misyonumuz
               </h2>
               <p className="text-base leading-[1.7] text-[#666666] font-body">
-                İşletmelerin SAP çözümleri ile dijital dönüşüm süreçlerini en verimli şekilde yönetmelerine 
-                destek olmak, yenilikçi çözümlerle müşterilerimizin rekabet gücünü artırmak ve 
-                sürdürülebilir başarılarına katkıda bulunmak.
+                İşletmelerin SAP çözümleriyle dijital dönüşüm süreçlerini en verimli şekilde yönetmesini sağlamak; 
+                yenilikçi uygulamalarımızla müşteri deneyimini geliştirmek ve sürdürülebilir başarılarına katkı sunmak.
               </p>
             </div>
           </div>
@@ -108,7 +107,7 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Uzmanlık Alanları Section */}
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section className="py-12 px-6 lg:px-8 bg-white">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
@@ -142,7 +141,7 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Değerlerimiz Section */}
-      <section className="py-20 px-6 lg:px-8 bg-gray-50">
+      <section className="py-12 px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
@@ -192,7 +191,7 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Fark Yaratan Yaklaşım Section */}
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section className="py-12 px-6 lg:px-8 bg-white">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">

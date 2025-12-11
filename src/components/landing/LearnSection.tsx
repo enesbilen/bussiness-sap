@@ -29,7 +29,7 @@ export function LearnSection() {
     const currentVideoUrl = activeTabData?.videoUrl || tabs[0].videoUrl || "https://www.youtube.com/watch?v=7zbppuqCq3c";
 
     return (
-        <div className="relative py-20 sm:py-24 px-6 lg:px-8 bg-white">
+        <div className="relative py-12 sm:py-20 px-6 lg:px-8 bg-white">
             <div className="mx-auto max-w-7xl">
                 {/* Video Gallery Pill */}
                 <div className="flex justify-center mb-6">

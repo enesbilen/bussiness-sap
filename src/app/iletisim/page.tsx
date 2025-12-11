@@ -23,10 +23,21 @@ export default function IletisimPage() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    // Simüle edilmiş form gönderme
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Bir hata oluştu");
+      }
+
       setSubmitStatus("success");
       setFormData({
         name: "",
@@ -36,7 +47,12 @@ export default function IletisimPage() {
         subject: "",
         message: "",
       });
-    }, 1500);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -86,7 +102,7 @@ export default function IletisimPage() {
       <HeroContact />
 
       {/* Main Content */}
-      <section className="py-20 sm:py-24 px-6 lg:px-8 bg-white">
+      <section className="py-12 sm:py-20 px-6 lg:px-8 bg-white">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Sol Taraf - İletişim Bilgileri */}
@@ -342,7 +358,7 @@ export default function IletisimPage() {
       </section>
 
       {/* Google Maps Section - Full Width */}
-      <section className="py-20 sm:py-24 px-6 lg:px-8 bg-gray-50">
+      <section className="py-12 sm:py-20 px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-gray-600 text-sm font-medium shadow-sm mb-6">

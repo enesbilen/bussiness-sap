@@ -30,7 +30,7 @@ export function CompanyTestimonials () {
   const IconComponent = current.brand.icon;
 
   return (
-    <section className="py-20 sm:py-24 px-6 lg:px-8 bg-white">
+    <section className="py-12 sm:py-20 px-6 lg:px-8 bg-white">
       <div className="mx-auto max-w-7xl">
         {/* Başlık */}
         <h2 className="text-center text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
@@ -83,7 +83,7 @@ export function CompanyTestimonials () {
             <div className="lg:col-span-3 p-10 lg:p-14 flex flex-col justify-between">
               {/* Alıntı */}
               <div>
-                <p className="text-xl lg:text-2xl font-body leading-[1.7] text-[#000000] mb-10">
+                <p className="text-xl lg:text-lg font-body leading-[1.7] text-[#000000] mb-10">
                   {current.testimonial.quote}
                 </p>
 

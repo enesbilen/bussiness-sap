@@ -2,7 +2,7 @@ import { Zap } from "lucide-react";
 
 export function ContentSection() {
     return (
-        <div className="py-24 sm:py-32 bg-white relative overflow-hidden">
+        <div className="py-16 sm:py-24 bg-white relative overflow-hidden">
             <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
 
                 {/* Unique Features Badge */}

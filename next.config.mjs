@@ -4,6 +4,15 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: [],
   },
+  async redirects() {
+    return [
+      {
+        source: "/hizmetler",
+        destination: "/hizmetlerimiz",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

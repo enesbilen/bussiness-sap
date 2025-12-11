@@ -66,30 +66,30 @@ export function Navbar() {
           <div className="md:hidden">
             <Link
               href="/"
-              className="relative w-8 h-8 block hover:scale-105 transition-transform"
+              className="relative w-full h-auto block hover:scale-105 transition-transform"
               onClick={closeMobileMenu}
             >
               <Image
-                src="/sap-images/logo/logo-white.svg"
+                src="/sap-images/logo/sapportlogo-white.png"
                 alt="SAP Logo"
-                width={32}
-                height={32}
-                className="object-contain"
+                width={120}
+                height={120}
+                className="object-contain w-full h-auto"
               />
             </Link>
           </div>
 
           {/* Desktop: Center Logo - Absolute positioned */}
-          <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
             <Link
               href="/"
-              className="relative w-8 h-8 block hover:scale-105 transition-transform pointer-events-auto"
+              className="relative w-full h-4 block hover:scale-105 transition-transform pointer-events-auto"
             >
               <Image
-                src="/sap-images/logo/logo-white.svg"
+                src="/sap-images/logo/sapportlogo-white.png"
                 alt="SAP Logo"
-                width={32}
-                height={32}
+                width={120}
+                height={120}
                 className="object-contain"
               />
             </Link>

@@ -3,7 +3,7 @@ import { Flame, ArrowUpRight } from "lucide-react";
 
 export function FeaturesSection() {
     return (
-        <div className="relative py-20 sm:py-24 px-6 lg:px-8 bg-white">
+        <div className="relative py-12 sm:py-20 px-6 lg:px-8 bg-white">
             <div className="mx-auto max-w-7xl">
                 {/* Daisy Features Pill */}
                 <div className="flex justify-center mb-6">

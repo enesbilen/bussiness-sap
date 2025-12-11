@@ -33,7 +33,7 @@ export default function HizmetlerimizPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative isolate py-20 sm:py-32 px-6 lg:px-8 overflow-hidden">
+      <section className="relative isolate py-12 sm:py-24 px-6 lg:px-8 overflow-hidden">
         {/* Background Image - hero-main.png */}
         <div className="absolute inset-0 z-[-1]">
           <Image
@@ -74,7 +74,7 @@ export default function HizmetlerimizPage() {
       </section>
 
       {/* SAP HR Danışmanlık Section */}
-      <section className="py-20 px-6 lg:px-8 bg-gray-50">
+      <section className="py-12 px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
@@ -123,7 +123,7 @@ export default function HizmetlerimizPage() {
       </section>
 
       {/* SGK Entegrasyonu Detay Section */}
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section className="py-12 px-6 lg:px-8 bg-white">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -172,7 +172,7 @@ export default function HizmetlerimizPage() {
       </section>
 
       {/* Pozitif Zaman Yönetimi Section */}
-      <section className="py-20 px-6 lg:px-8 bg-gray-50">
+      <section className="py-12 px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
@@ -204,7 +204,7 @@ export default function HizmetlerimizPage() {
       </section>
 
       {/* SAP Modülleri Section */}
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section className="py-12 px-6 lg:px-8 bg-white">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
@@ -244,7 +244,7 @@ export default function HizmetlerimizPage() {
       </section>
 
       {/* Özel Çözümler Section */}
-      <section className="py-20 px-6 lg:px-8 bg-gray-50">
+      <section className="py-12 px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
@@ -292,7 +292,7 @@ export default function HizmetlerimizPage() {
       </section>
 
       {/* SSS Section */}
-      <section className="py-20 px-6 lg:px-8 bg-white">
+      <section className="py-12 px-6 lg:px-8 bg-white">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-display font-medium tracking-tight text-[#000000] mb-6 leading-[1.2]">
