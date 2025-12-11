@@ -7,6 +7,7 @@ export interface BlogPost {
   date: string;
   image?: string;
   category: string;
+  tags?: string[];
 }
 
 export interface Service {

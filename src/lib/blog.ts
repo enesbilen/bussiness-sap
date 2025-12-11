@@ -9,6 +9,7 @@ export interface BlogPost {
   category: string;
   author: string;
   readTime?: string;
+  tags?: string[];
 }
 
 export function getAllPosts(): BlogPost[] {
