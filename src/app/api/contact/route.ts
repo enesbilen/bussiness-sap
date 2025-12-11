@@ -50,8 +50,15 @@ export async function POST(request: NextRequest) {
     // Request body'yi parse et
     const body = await request.json();
 
+    // Boş string'leri undefined'a çevir (optional alanlar için)
+    const cleanedBody = {
+      ...body,
+      phone: body.phone && body.phone.trim() !== "" ? body.phone : undefined,
+      company: body.company && body.company.trim() !== "" ? body.company : undefined,
+    };
+
     // Validasyon
-    const validationResult = contactFormSchema.safeParse(body);
+    const validationResult = contactFormSchema.safeParse(cleanedBody);
     if (!validationResult.success) {
       return NextResponse.json(
         { 

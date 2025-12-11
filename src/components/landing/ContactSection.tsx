@@ -33,7 +33,11 @@ export function ContactSection() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Bir hata oluştu");
+        // Detaylı hata mesajını göster
+        const errorMessage = data.details 
+          ? `${data.error}: ${data.details.map((d: any) => d.message).join(", ")}`
+          : data.error || "Bir hata oluştu";
+        throw new Error(errorMessage);
       }
 
       setSubmitStatus("success");
@@ -161,13 +165,14 @@ export function ContactSection() {
               iletişim formumuzu kullanabilirsiniz.
             </p>
 
-            <div className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name Input */}
               <div>
                 <input
                   type="text"
                   name="name"
                   placeholder="Adınızı girin"
+                  required
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all font-body"
@@ -180,6 +185,7 @@ export function ContactSection() {
                   type="email"
                   name="email"
                   placeholder="E-posta adresinizi girin"
+                  required
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all font-body"
@@ -192,22 +198,21 @@ export function ContactSection() {
                   name="message"
                   placeholder="Mesajınızı girin"
                   rows={4}
+                  required
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none font-body"
                 />
               </div>
 
               {/* Submit Button */}
-              <form onSubmit={handleSubmit}>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 bg-gray-900 text-white font-body font-semibold rounded-xl hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? "Gönderiliyor..." : "Gönder"}
-                </button>
-              </form>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-4 bg-gray-900 text-white font-body font-semibold rounded-xl hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Gönderiliyor..." : "Gönder"}
+              </button>
 
               {/* Success/Error Message */}
               {submitStatus === "success" && (
@@ -220,7 +225,7 @@ export function ContactSection() {
                   Bir hata oluştu. Lütfen tekrar deneyin veya doğrudan e-posta ile iletişime geçin.
                 </div>
               )}
-            </div>
+            </form>
           </div>
         </div>
       </div>

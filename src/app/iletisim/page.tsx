@@ -35,7 +35,11 @@ export default function IletisimPage() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Bir hata oluştu");
+        // Detaylı hata mesajını göster
+        const errorMessage = data.details 
+          ? `${data.error}: ${data.details.map((d: any) => d.message).join(", ")}`
+          : data.error || "Bir hata oluştu";
+        throw new Error(errorMessage);
       }
 
       setSubmitStatus("success");
