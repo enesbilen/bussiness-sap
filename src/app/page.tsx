@@ -1,22 +1,21 @@
-import Hero from "@/components/home/Hero";
-import Features from "@/components/home/Features";
-import ServicesPreview from "@/components/home/ServicesPreview";
-import Stats from "@/components/home/Stats";
-import Testimonials from "@/components/home/Testimonials";
-import LatestBlog from "@/components/home/LatestBlog";
-import CTA from "@/components/home/CTA";
+import { Hero } from "@/components/landing/Hero";
+import { FeaturesSection } from "@/components/landing/FeaturesSection";
+import { LearnSection } from "@/components/landing/LearnSection";
+import { AboutSAPSection } from "@/components/landing/AboutSAPSection";
+import { CompanyTestimonials } from "@/components/landing/CompanyTestimonials";
+import { ContactSection } from "@/components/landing/ContactSection";
+import { PreFooterCTA } from "@/components/landing/PreFooterCTA";
 
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col gap-24 sm:gap-24 overflow-x-hidden">
       <Hero />
-      <Features />
-      <ServicesPreview />
-      <Stats />
-      <Testimonials />
-      <LatestBlog />
-      <CTA />
-    </>
+      <AboutSAPSection />
+      <LearnSection />
+      <FeaturesSection />
+      <CompanyTestimonials />
+      <ContactSection />
+      <PreFooterCTA />
+    </div>
   );
 }
-

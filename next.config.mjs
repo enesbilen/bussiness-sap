@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  // Service worker'ı devre dışı bırak
+  experimental: {
+    optimizePackageImports: [],
+  },
 };
 
 export default nextConfig;

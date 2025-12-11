@@ -1,166 +1,64 @@
 "use client";
-
-import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
-import Button from "@/components/ui/Button";
-import Container from "@/components/ui/Container";
+import { ChevronDown, Menu } from "lucide-react";
+import Image from "next/image";
 
-const navigation = [
-  { name: "Ana Sayfa", href: "/" },
-  { name: "Hizmetler", href: "/hizmetler" },
-  { name: "Blog", href: "/blog" },
-  { name: "İletişim", href: "/iletisim" },
-];
-
-export default function Navbar() {
-  const [isScrolled, setIsScrolled] = React.useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const pathname = usePathname();
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+export function Navbar() {
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "glass border-b border-zinc-800/50"
-          : "bg-transparent"
-      )}
-    >
-      <Container>
-        <nav className="flex h-20 items-center justify-between">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center space-x-2 group"
-            aria-label="Aerisap Ana Sayfa"
-          >
-            <span className="text-2xl font-bold text-white group-hover:text-gradient transition-all duration-300">
-              Aerisap
-            </span>
+    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+      <nav className="flex items-center justify-between pl-4 pr-4 py-2 rounded-full bg-[#1F1F1F] text-white shadow-2xl w-full max-w-5xl h-[64px]">
+        {/* Desktop: Left Section - Home Button + Links */}
+        <div className="hidden md:flex items-center gap-1">
+          {/* 'Home' button - styled as a white/gray active pill */}
+          <Link href="/" className="px-6 py-2.5 rounded-full bg-white text-black text-sm font-body font-semibold hover:bg-gray-100 transition-colors">
+            Home
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-1">
-            {navigation.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
-                    "relative px-4 py-2 text-sm font-medium transition-colors rounded-lg",
-                    isActive
-                      ? "text-white"
-                      : "text-zinc-400 hover:text-white"
-                  )}
-                >
-                  {item.name}
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeNav"
-                      className="absolute inset-0 rounded-lg bg-zinc-800/50"
-                      style={{ zIndex: -1 }}
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
-                </Link>
-              );
-            })}
-          </div>
+          {/* Other Nav Links */}
+          <Link href="#" className="px-4 py-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 text-sm font-body font-medium transition-colors">
+            App
+          </Link>
 
-          {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
-            <Button
-              asChild
-              href="/iletisim"
-              variant="primary"
-              size="md"
-              className="bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 border-0"
-            >
-              İletişime Geçin
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Menüyü aç/kapat"
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+          <button className="flex items-center gap-1 px-4 py-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 text-sm font-body font-medium transition-colors group">
+            Others <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100" />
           </button>
-        </nav>
-      </Container>
+        </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden glass border-t border-zinc-800"
+        {/* Mobile: Left Logo */}
+        <div className="md:hidden">
+          <Link href="/" className="relative w-8 h-8 block hover:scale-105 transition-transform">
+            {/* Logo - 8 noktalı çiçek/gear benzeri beyaz logo */}
+            <Image src="/sap-images/logo/logo-white.svg" alt="SAP Logo" width={32} height={32} className="object-contain" />
+          </Link>
+        </div>
+
+        {/* Desktop: Center Logo */}
+        <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <Link href="/" className="relative w-8 h-8 block hover:scale-105 transition-transform">
+            {/* Logo from public/sap-images */}
+            <Image src="/sap-images/logo/logo-white.svg" alt="SAP Logo" width={32} height={32} className="object-contain" />
+          </Link>
+        </div>
+
+        {/* Desktop: Right Section - All Pages + CTA */}
+        <div className="hidden md:flex items-center gap-2">
+          <button className="flex items-center gap-1 px-4 py-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 text-sm font-body font-medium transition-colors group">
+            All Pages <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100" />
+          </button>
+
+          <Link
+            href="#"
+            className="rounded-full bg-[#C3F53C] px-6 py-3 text-sm font-body font-bold text-black hover:bg-[#b2e52b] transition-colors"
           >
-            <Container>
-              <div className="py-4 space-y-2">
-                {navigation.map((item) => {
-                  const isActive = pathname === item.href;
-                  return (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={cn(
-                        "block px-4 py-3 text-base font-medium transition-colors rounded-lg",
-                        isActive
-                          ? "text-white bg-zinc-800/50"
-                          : "text-zinc-400 hover:text-white hover:bg-zinc-800/30"
-                      )}
-                    >
-                      {item.name}
-                    </Link>
-                  );
-                })}
-                <div className="pt-2">
-                  <Button
-                    asChild
-                    href="/iletisim"
-                    variant="primary"
-                    size="md"
-                    className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 border-0"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    İletişime Geçin
-                  </Button>
-                </div>
-              </div>
-            </Container>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+            Get Template
+          </Link>
+        </div>
+
+        {/* Mobile: Right Hamburger Menu */}
+        <button className="md:hidden w-10 h-10 rounded-xl bg-white flex items-center justify-center">
+          <Menu className="w-6 h-6 text-black" />
+        </button>
+      </nav>
+    </div>
   );
 }

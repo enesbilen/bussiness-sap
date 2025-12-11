@@ -2,29 +2,47 @@
 
 @layer base {
   :root {
-    /* Premium Dark Theme Color Palette */
-    --color-bg-primary: #0a0a0f;
-    --color-bg-secondary: #12121a;
-    --color-bg-card: #16161f;
-    --color-bg-elevated: #1a1a25;
-    
-    /* Gradient Colors */
-    --color-gradient-start: #6366f1;
-    --color-gradient-mid: #8b5cf6;
-    --color-gradient-end: #a855f7;
-    
-    /* Accent Colors */
-    --color-accent-amber: #f59e0b;
-    --color-accent-emerald: #10b981;
-    
-    /* Text Colors */
-    --color-text-primary: #ffffff;
-    --color-text-secondary: #a1a1aa;
-    --color-text-muted: #71717a;
-    
-    /* Border Colors */
-    --color-border: rgba(255, 255, 255, 0.08);
-    --color-border-hover: rgba(255, 255, 255, 0.15);
+    /* Temiz Beyaz Tema – Orijinal Görsele %100 Uygun */
+    --color-bg-primary: #ffffff;
+    /* Ana arka plan – bembeyaz */
+    --color-bg-secondary: #f8f9fc;
+    /* Çok hafif gri-mavi ton (grid için) */
+    --color-bg-card: #ffffff;
+    /* Kartlar ve yapışkan notlar */
+    --color-bg-elevated: #ffffff;
+    /* Hafif yükseltilmiş kartlar (gölge ile ayrılır) */
+
+    /* Ana Vurgu Rengi – Görseldeki parlak lime yeşili */
+    --color-accent-primary: #afff00;
+    /* Butonlar, progress çemberleri, ikonlar */
+    --color-accent-primary-hover: #94e600;
+    /* Hover için biraz daha koyu */
+
+    /* İsteğe bağlı ekstra vurgular (görselde az kullanılıyor ama uyumlu)
+  --color-accent-blue:      #3b82f6;
+  --color-accent-purple:    #8b5cf6;
+
+  /* Metin Renkleri */
+    --color-text-primary: #000000;
+    /* Ana başlıklar */
+    --color-text-secondary: #374151;
+    /* Normal metinler */
+    --color-text-muted: #6b7280;
+    /* Açıklama, placeholder */
+    --color-text-light: #9ca3af;
+
+    /* Border ve Gölge */
+    --color-border: rgba(0, 0, 0, 0.08);
+    --color-border-light: rgba(0, 0, 0, 0.05);
+    --color-border-accent: #afff00;
+
+    /* Grid deseni için (görseldeki hafif kareli arka plan) */
+    --color-grid: #f0f0f0;
+
+    /* Shadow – yapışkan notların hafif gölgesi için */
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.1);
   }
 
   * {
@@ -34,7 +52,12 @@
   body {
     background: var(--color-bg-primary);
     color: var(--color-text-primary);
-    font-family: var(--font-space), system-ui, sans-serif;
+    font-family: var(--font-body), "Instrument Sans", "Instrument Sans Placeholder", system-ui, sans-serif;
+  }
+
+  /* Başlıklar için Clash Grotesk */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), "Clash Grotesk", "Clash Grotesk Placeholder", sans-serif;
   }
 
   ::selection {
@@ -107,9 +130,17 @@
   }
 
   @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   /* Floating Animation */
@@ -118,8 +149,15 @@
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
   }
 
   /* Pulse Glow */
@@ -128,7 +166,37 @@
   }
 
   @keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 0 20px -5px var(--color-gradient-mid); }
-    50% { box-shadow: 0 0 40px -5px var(--color-gradient-mid); }
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px -5px var(--color-gradient-mid);
+    }
+
+    50% {
+      box-shadow: 0 0 40px -5px var(--color-gradient-mid);
+    }
+  }
+
+  /* Infinite Scroll Animation */
+  .animate-scroll {
+    display: inline-flex;
+    animation: scroll 100s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-25% - 1rem));
+    }
+  }
+
+  /* Dotted Pattern */
+  .bg-dotted-pattern {
+    background-color: #F3F4F6;
+    background-image: radial-gradient(circle, rgba(216, 214, 214, 0.432) 1px, transparent 1px);
+    background-size: 3px 3px;
   }
 }
