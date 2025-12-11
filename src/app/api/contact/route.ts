@@ -85,9 +85,23 @@ export async function POST(request: NextRequest) {
     console.error("Contact form error:", error);
     
     // Hata mesajını güvenli bir şekilde döndür
-    const errorMessage = error instanceof Error 
-      ? error.message 
-      : "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.";
+    // Production'da hassas bilgileri gizle
+    const isProduction = process.env.NODE_ENV === "production";
+    let errorMessage = "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.";
+    
+    if (error instanceof Error) {
+      // Production'da genel mesaj, development'ta detaylı mesaj
+      if (isProduction) {
+        // SMTP hatalarını genel mesaja çevir
+        if (error.message.includes("SMTP") || error.message.includes("EAUTH") || error.message.includes("ECONNECTION")) {
+          errorMessage = "Email gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin veya doğrudan e-posta ile iletişime geçin.";
+        } else {
+          errorMessage = error.message;
+        }
+      } else {
+        errorMessage = error.message;
+      }
+    }
 
     return NextResponse.json(
       { error: errorMessage },
