@@ -26,9 +26,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-sm font-semibold text-sky-500 mb-4"
+              className="text-sm font-semibold text-copper-600 mb-4"
             >
-              15+ Yıllık SAP & ABAP Deneyimi
+              2017'den Beri SAP Çözümleri
             </motion.p>
             
             <motion.h1
@@ -37,9 +37,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight"
             >
-              SAP Çözümlerinizde
+              Şirketinizi Geleceğe Taşıyacak
               <br />
-              <span className="text-sky-500">Güvenilir Ortağınız</span>
+              <span className="text-copper-600">e-Çözümler ve SAP Uygulamaları</span>
             </motion.h1>
             
             <motion.p
@@ -48,9 +48,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-lg sm:text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed"
             >
-              Aerisap olarak, kurumsal SAP projelerinizde 15 yılı aşkın deneyimimizle
-              yanınızdayız. S/4HANA migration, ABAP geliştirme ve Fiori uygulamalarında
-              uzman ekibimizle hizmetinizdeyiz.
+              AERISAP olarak, SAP kurulum, geliştirme ve entegrasyon hizmetleri sunuyoruz. 
+              QNB eFinans iş birliğiyle 150'den fazla firmada kullanılan çözümlerimizle 
+              dijital dönüşümünüzde yanınızdayız.
             </motion.p>
             
             <motion.div
@@ -86,15 +86,15 @@ export default function Hero() {
               className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto"
             >
               {[
-                "S/4HANA Migration",
-                "ABAP Geliştirme",
-                "Fiori Uygulamaları",
+                "SAP Uygulama Geliştirme",
+                "SAP Danışmanlık",
+                "Paket Çözümler",
               ].map((feature, index) => (
                 <div
                   key={feature}
                   className="flex items-center justify-center space-x-2 text-slate-700"
                 >
-                  <CheckCircle className="h-5 w-5 text-sky-500 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-copper-600 flex-shrink-0" />
                   <span className="text-sm font-medium">{feature}</span>
                 </div>
               ))}

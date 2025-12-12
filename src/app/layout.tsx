@@ -12,25 +12,76 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aerisap | SAP & ABAP Danışmanlık | 15+ Yıllık Deneyim",
+  metadataBase: new URL("https://aerisap.com"),
+  title: {
+    default: "AERISAP | SAP Uygulamaları & Danışmanlık | e-Çözümler",
+    template: "%s | AERISAP",
+  },
   description:
-    "Aerisap, 15 yılı aşkın SAP ve ABAP deneyimi ile kurumsal çözümler sunan önde gelen danışmanlık firması. S/4HANA, Fiori, ABAP geliştirme ve migration hizmetleri.",
+    "AERISAP Yazılım & Danışmanlık A.Ş., 2017'den beri SAP kurulum, geliştirme ve entegrasyon hizmetleri sunan Ankara merkezli danışmanlık firması. E-Fatura, E-İrsaliye, E-Arşiv, E-Defter paket çözümleri. QNB eFinans iş birliğiyle 150'den fazla firmada kullanılan çözümler.",
   keywords: [
     "SAP",
     "ABAP",
-    "S/4HANA",
-    "Fiori",
     "SAP danışmanlık",
-    "SAP migration",
-    "SAP geliştirme",
+    "SAP uygulama geliştirme",
+    "E-Fatura",
+    "E-İrsaliye",
+    "E-Arşiv",
+    "E-Defter",
+    "QNB eFinans",
+    "SAP geliştirme ortağı",
+    "Ankara SAP danışmanlık",
+    "SAP entegrasyon",
+    "SAP kurulum",
   ],
-  authors: [{ name: "Aerisap" }],
+  authors: [{ name: "AERISAP Yazılım & Danışmanlık A.Ş." }],
+  creator: "AERISAP Yazılım & Danışmanlık A.Ş.",
+  publisher: "AERISAP Yazılım & Danışmanlık A.Ş.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/aerisaplogo.png",
+    shortcut: "/aerisaplogo.png",
+    apple: "/aerisaplogo.png",
+  },
   openGraph: {
-    title: "Aerisap | SAP & ABAP Danışmanlık",
-    description:
-      "15 yılı aşkın SAP ve ABAP deneyimi ile kurumsal çözümler sunan önde gelen danışmanlık firması.",
     type: "website",
     locale: "tr_TR",
+    url: "https://aerisap.com",
+    siteName: "AERISAP",
+    title: "AERISAP | SAP Uygulamaları & Danışmanlık",
+    description:
+      "Şirketinizi geleceğe taşıyacak e-Çözümler ve SAP uygulamaları. 150'den fazla firmada kullanılan çözümler.",
+    images: [
+      {
+        url: "/aerisaplogo.png",
+        width: 1200,
+        height: 630,
+        alt: "AERISAP Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AERISAP | SAP Uygulamaları & Danışmanlık",
+    description:
+      "Şirketinizi geleceğe taşıyacak e-Çözümler ve SAP uygulamaları. 150'den fazla firmada kullanılan çözümler.",
+    images: ["/aerisaplogo.png"],
+  },
+  alternates: {
+    canonical: "https://aerisap.com",
+  },
+  verification: {
+    // Google Search Console ve diğer doğrulama kodları buraya eklenebilir
   },
 };
 

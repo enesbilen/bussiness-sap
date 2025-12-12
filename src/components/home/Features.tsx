@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   Code,
-  Database,
-  Shield,
+  FileText,
+  Package,
   Zap,
   Users,
   TrendingUp,
@@ -18,39 +18,39 @@ import { Card, CardContent } from "@/components/ui/Card";
 const features = [
   {
     icon: Code,
-    title: "ABAP Geliştirme",
+    title: "SAP Uygulama Geliştirme",
     description:
-      "Modern ABAP teknikleri ile ölçeklenebilir, performanslı ve bakımı kolay SAP uygulamaları geliştiriyoruz.",
+      "ABAP programlama ve özel çözümler ile işletmenizin ihtiyaçlarına özel SAP uygulamaları geliştiriyoruz.",
   },
   {
-    icon: Database,
-    title: "S/4HANA Migration",
+    icon: FileText,
+    title: "SAP Danışmanlık",
     description:
-      "Eski SAP sistemlerinizi S/4HANA'ya sorunsuz geçiş için kapsamlı planlama ve uzman ekibimizle yanınızdayız.",
+      "Sistemlerinizin yapılandırması, entegrasyonu ve güncelleştirilmesi konusunda uzman danışmanlık hizmetleri.",
   },
   {
-    icon: Shield,
-    title: "Güvenlik & Uyumluluk",
+    icon: Package,
+    title: "Paket Çözümler",
     description:
-      "Enterprise-grade güvenlik standartları ve sektör uyumluluk gereksinimlerini karşılayan çözümler sunuyoruz.",
+      "E-Fatura, E-İrsaliye, E-Arşiv ve E-Defter paket çözümlerimizle dijital dönüşümünüzü destekliyoruz.",
   },
   {
     icon: Zap,
-    title: "Performans Optimizasyonu",
+    title: "QNB E-Solutions İş Birliği",
     description:
-      "SAP sistemlerinizin performansını analiz edip, optimize ederek iş süreçlerinizin hızını artırıyoruz.",
+      "Dijital dönüşüm süreçlerinde iş ortağımız QNB E-Solutions ile entegre ve yenilikçi çözümler sunuyoruz.",
   },
   {
     icon: Users,
-    title: "Eğitim & Destek",
+    title: "150+ Firmada Kullanılan Çözümler",
     description:
-      "Ekibinizin SAP sistemlerini etkin kullanması için kapsamlı eğitim programları ve 7/24 destek hizmeti.",
+      "QNB eFinans iş birliğiyle 150'den fazla firmada kullanılan güvenilir ve sürdürülebilir çözümlerimiz.",
   },
   {
     icon: TrendingUp,
-    title: "Stratejik Danışmanlık",
+    title: "SAP Geliştirme Ortağı",
     description:
-      "SAP yatırımlarınızın ROI'sini maksimize etmek için stratejik danışmanlık ve roadmap oluşturma hizmetleri.",
+      "SAP A.G tarafından geliştirme ortağı olarak tanınan AERISAP, sektörde güvenilir bir iş ortağıdır.",
   },
 ];
 
@@ -74,8 +74,8 @@ export default function Features() {
             Neden Aerisap?
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            15 yıllık deneyimimiz ve uzman ekibimizle, SAP projelerinizde
-            güvenilir çözüm ortağınız olmaktan gurur duyuyoruz.
+            2017'den beri SAP çözümleri sunan AERISAP olarak, QNB eFinans iş birliğiyle 
+            150'den fazla firmada kullanılan çözümlerimizle dijital dönüşümünüzde yanınızdayız.
           </p>
         </motion.div>
 
@@ -93,8 +93,8 @@ export default function Features() {
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
-                        <div className="h-12 w-12 rounded-lg bg-sky-100 flex items-center justify-center">
-                          <Icon className="h-6 w-6 text-sky-600" />
+                        <div className="h-12 w-12 rounded-lg bg-copper-100 flex items-center justify-center">
+                          <Icon className="h-6 w-6 text-copper-600" />
                         </div>
                       </div>
                       <div className="flex-1">

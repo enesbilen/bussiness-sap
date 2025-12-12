@@ -9,25 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        slate: {
-          50: "#f8fafc",
-          200: "#e2e8f0",
-          500: "#64748b",
-          600: "#475569",
-          800: "#1e293b",
-          900: "#0f172a",
+        copper: {
+          50: "#fef8f5",
+          100: "#fceee5",
+          200: "#f8dcc8",
+          300: "#f2c4a7",
+          400: "#e8a87c",
+          500: "#DA8A67",
+          600: "#C97A4F",
+          700: "#B87333",
+          800: "#A0522D",
+          900: "#8B4513",
         },
-        sky: {
-          500: "#0ea5e9",
-          600: "#0284c7",
-        },
-      },
-      fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };
 
 export default config;

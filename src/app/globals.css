@@ -1,16 +1,26 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --color-slate-900: #0f172a;
-    --color-slate-800: #1e293b;
-    --color-slate-600: #475569;
-    --color-slate-500: #64748b;
-    --color-slate-200: #e2e8f0;
-    --color-slate-50: #f8fafc;
-    --color-sky-500: #0ea5e9;
-  }
+@theme {
+  --color-slate-50: #f8fafc;
+  --color-slate-200: #e2e8f0;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  
+  --color-copper-50: #fef8f5;
+  --color-copper-100: #fceee5;
+  --color-copper-200: #f8dcc8;
+  --color-copper-300: #f2c4a7;
+  --color-copper-400: #e8a87c;
+  --color-copper-500: #DA8A67;
+  --color-copper-600: #C97A4F;
+  --color-copper-700: #B87333;
+  --color-copper-800: #A0522D;
+  --color-copper-900: #8B4513;
+}
 
+@layer base {
   * {
     @apply border-slate-200;
   }

@@ -14,13 +14,24 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Blog Yazısı Bulunamadı | Aerisap",
+      title: "Blog Yazısı Bulunamadı",
     };
   }
 
   return {
-    title: `${post.title} | Aerisap Blog`,
+    title: post.title,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      url: `https://aerisap.com/blog/${params.slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+    },
   };
 }
 
@@ -41,7 +52,7 @@ export default function BlogPostPage({
         <Container>
           <div className="max-w-4xl mx-auto">
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 text-sm font-medium bg-sky-100 text-sky-700 rounded-full">
+              <span className="inline-block px-4 py-2 text-sm font-medium bg-copper-100 text-copper-700 rounded-full">
                 {post.category}
               </span>
             </div>

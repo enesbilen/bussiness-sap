@@ -11,6 +11,7 @@ import Container from "@/components/ui/Container";
 
 const navigation = [
   { name: "Ana Sayfa", href: "/" },
+  { name: "Hakkımızda", href: "/hakkimizda" },
   { name: "Hizmetlerimiz", href: "/hizmetler" },
   { name: "Blog", href: "/blog" },
   { name: "İletişim", href: "/iletisim" },
@@ -47,10 +48,14 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center space-x-2 text-xl font-bold text-slate-900 transition-colors hover:text-sky-500"
+            className="flex items-center space-x-2 text-xl font-bold text-slate-900 transition-colors hover:text-copper-600"
             aria-label="Aerisap Ana Sayfa"
           >
-            <span className="text-2xl">Aerisap</span>
+            <img
+              src="/aerisaplogo.png"
+              alt="Aerisap Logo"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -64,8 +69,8 @@ export default function Navbar() {
                   className={cn(
                     "px-4 py-2 text-sm font-medium transition-colors rounded-lg",
                     isActive
-                      ? "text-sky-500 bg-sky-50"
-                      : "text-slate-700 hover:text-sky-500 hover:bg-slate-50"
+                      ? "text-copper-600 bg-copper-50"
+                      : "text-slate-700 hover:text-copper-600 hover:bg-copper-50"
                   )}
                 >
                   {item.name}
@@ -90,7 +95,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 text-slate-700 hover:text-sky-500 transition-colors"
+            className="md:hidden p-2 text-slate-700 hover:text-copper-600 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Menüyü aç/kapat"
             aria-expanded={isMobileMenuOpen}
@@ -126,8 +131,8 @@ export default function Navbar() {
                       className={cn(
                         "block px-4 py-3 text-base font-medium transition-colors rounded-lg",
                         isActive
-                          ? "text-sky-500 bg-sky-50"
-                          : "text-slate-700 hover:text-sky-500 hover:bg-slate-50"
+                          ? "text-copper-600 bg-copper-50"
+                          : "text-slate-700 hover:text-copper-600 hover:bg-copper-50"
                       )}
                     >
                       {item.name}

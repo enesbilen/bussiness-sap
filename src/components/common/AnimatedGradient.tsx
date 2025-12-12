@@ -14,9 +14,9 @@ export default function AnimatedGradient({
   variant = "subtle",
 }: AnimatedGradientProps) {
   const variants = {
-    subtle: "from-sky-500/10 via-blue-500/5 to-transparent",
-    medium: "from-sky-500/20 via-blue-500/10 to-transparent",
-    strong: "from-sky-500/30 via-blue-500/15 to-transparent",
+    subtle: "from-copper-500/10 via-copper-400/5 to-transparent",
+    medium: "from-copper-500/20 via-copper-400/10 to-transparent",
+    strong: "from-copper-500/30 via-copper-400/15 to-transparent",
   };
 
   return (

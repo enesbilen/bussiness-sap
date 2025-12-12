@@ -106,7 +106,7 @@ export default function Testimonials() {
                 >
                   <Card hover className="h-full">
                     <CardContent className="p-6">
-                      <Quote className="h-8 w-8 text-sky-500 mb-4" />
+                      <Quote className="h-8 w-8 text-copper-600 mb-4" />
                       <p className="text-slate-700 mb-6 leading-relaxed">
                         "{testimonial.content}"
                       </p>

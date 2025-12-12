@@ -11,10 +11,12 @@ const footerLinks = {
     { name: "Haberler", href: "/haberler" },
   ],
   hizmetler: [
-    { name: "SAP S/4HANA", href: "/hizmetler#s4hana" },
-    { name: "ABAP Geliştirme", href: "/hizmetler#abap" },
-    { name: "Fiori Uygulamaları", href: "/hizmetler#fiori" },
-    { name: "Migration Hizmetleri", href: "/hizmetler#migration" },
+    { name: "SAP Uygulama Geliştirme", href: "/hizmetler#uygulama" },
+    { name: "SAP Danışmanlık", href: "/hizmetler#danismanlik" },
+    { name: "E-Fatura Paketi", href: "/hizmetler#efatura" },
+    { name: "E-İrsaliye Paketi", href: "/hizmetler#eirsaliye" },
+    { name: "E-Arşiv Paketi", href: "/hizmetler#earsiv" },
+    { name: "E-Defter Paketi", href: "/hizmetler#edefter" },
   ],
   iletisim: [
     { name: "İletişim", href: "/iletisim" },
@@ -44,34 +46,36 @@ export default function Footer() {
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Şirket Bilgileri */}
           <div className="lg:col-span-1">
-            <h3 className="text-white text-xl font-bold mb-4">Aerisap</h3>
+            <h3 className="text-white text-xl font-bold mb-4">AERISAP</h3>
             <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-              15 yılı aşkın SAP ve ABAP deneyimi ile kurumsal çözümler sunan
-              önde gelen danışmanlık firması.
+              2017'de kurulan ve 2019'dan bu yana anonim şirket olarak faaliyet gösteren 
+              Ankara merkezli SAP danışmanlık firması. SAP A.G tarafından geliştirme ortağı olarak tanınmaktadır.
             </p>
             <div className="space-y-3 text-sm">
               <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-sky-500 mt-0.5 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-copper-600 mt-0.5 flex-shrink-0" />
                 <span className="text-slate-400">
-                  İstanbul, Türkiye
+                  ASBÜ Sosyokent Teknoloji Geliştirme Bölgesi,<br />
+                  Hacı Bayram Mah., Mahmut Atalay Sokak No:6,<br />
+                  Kat No: 2 İç Kapı No: 213, Altındağ/Ankara
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-sky-500 flex-shrink-0" />
+                <Phone className="h-5 w-5 text-copper-600 flex-shrink-0" />
                 <a
-                  href="tel:+902121234567"
-                  className="text-slate-400 hover:text-sky-400 transition-colors"
+                  href="tel:+905333474633"
+                  className="text-slate-400 hover:text-copper-500 transition-colors"
                 >
-                  +90 (212) 123 45 67
+                  +90 533 347 46 33
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-sky-500 flex-shrink-0" />
+                <Mail className="h-5 w-5 text-copper-600 flex-shrink-0" />
                 <a
-                  href="mailto:info@aerisap.com"
-                  className="text-slate-400 hover:text-sky-400 transition-colors"
+                  href="mailto:turgut.bakir@aerisap.com"
+                  className="text-slate-400 hover:text-copper-500 transition-colors"
                 >
-                  info@aerisap.com
+                  turgut.bakir@aerisap.com
                 </a>
               </div>
             </div>
@@ -85,7 +89,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-sky-400 transition-colors text-sm"
+                    className="text-slate-400 hover:text-copper-500 transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -102,7 +106,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-sky-400 transition-colors text-sm"
+                    className="text-slate-400 hover:text-copper-500 transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -119,7 +123,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-sky-400 transition-colors text-sm"
+                    className="text-slate-400 hover:text-copper-500 transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -137,7 +141,7 @@ export default function Footer() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-slate-400 hover:text-sky-400 transition-colors"
+                      className="text-slate-400 hover:text-copper-500 transition-colors"
                       aria-label={social.name}
                     >
                       <Icon className="h-5 w-5" />
@@ -153,7 +157,7 @@ export default function Footer() {
         <div className="border-t border-slate-800 py-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-slate-400 text-sm">
-              © {new Date().getFullYear()} Aerisap. Tüm hakları saklıdır.
+              © {new Date().getFullYear()} AERISAP Yazılım & Danışmanlık A.Ş. Tüm hakları saklıdır.
             </p>
             <p className="text-slate-500 text-sm">
               SAP ve diğer SAP ürün ve hizmetleri SAP SE'nin ticari markalarıdır.

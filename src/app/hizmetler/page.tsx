@@ -1,15 +1,11 @@
 import * as React from "react";
 import {
   Code,
-  Database,
-  Smartphone,
-  ArrowRight,
+  FileText,
+  Package,
+  Archive,
+  BookOpen,
   CheckCircle,
-  Zap,
-  Shield,
-  Cloud,
-  BarChart3,
-  Settings,
 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
@@ -24,138 +20,93 @@ import Link from "next/link";
 
 const services = [
   {
-    id: "s4hana",
-    title: "SAP S/4HANA Migration",
-    icon: Database,
-    description:
-      "Eski SAP sistemlerinizi S/4HANA'ya sorunsuz geçiş için kapsamlı planlama, analiz ve implementasyon hizmetleri.",
-    features: [
-      "System Landscape Assessment",
-      "Data Migration Strategy",
-      "Custom Code Adaptation",
-      "Testing & Validation",
-      "Go-Live Support",
-      "Post-Migration Optimization",
-    ],
-  },
-  {
-    id: "abap",
-    title: "ABAP Geliştirme",
+    id: "uygulama",
+    title: "SAP Uygulama Geliştirme",
     icon: Code,
     description:
-      "Modern ABAP teknikleri ile ölçeklenebilir, performanslı ve bakımı kolay SAP uygulamaları geliştiriyoruz.",
+      "İşletmenizin ihtiyaçlarına özel SAP uygulamaları geliştiriyoruz. ABAP programlama ve özel çözümler ile iş süreçlerinizi optimize ediyoruz.",
     features: [
-      "Custom Report Development",
-      "Enhancement & Modification",
-      "Workflow Development",
-      "ALV & Interactive Reports",
-      "RFC & BAPI Development",
-      "Performance Optimization",
+      "ABAP Programlama",
+      "Özel SAP Uygulamaları",
+      "Custom Report Geliştirme",
+      "Sistem Entegrasyonları",
+      "İş Süreçleri Optimizasyonu",
+      "Teknik Danışmanlık",
     ],
   },
   {
-    id: "fiori",
-    title: "SAP Fiori Uygulamaları",
-    icon: Smartphone,
+    id: "danismanlik",
+    title: "SAP Danışmanlık",
+    icon: FileText,
     description:
-      "Modern, kullanıcı dostu Fiori uygulamaları ile SAP deneyiminizi yeniden tanımlayın.",
+      "Sistemlerinizin yapılandırması, entegrasyonu ve güncelleştirilmesi konusunda uzman danışmanlık hizmetleri sunuyoruz.",
     features: [
-      "Fiori App Development",
-      "UI5 Framework",
-      "Responsive Design",
-      "Role-Based Apps",
-      "Fiori Launchpad Configuration",
-      "UX Best Practices",
+      "SAP Sistem Yapılandırması",
+      "Sistem Entegrasyonu",
+      "Sistem Güncelleştirme",
+      "Teknik Danışmanlık",
+      "Proje Yönetimi",
+      "Eğitim ve Destek",
     ],
   },
   {
-    id: "migration",
-    title: "SAP Migration Hizmetleri",
-    icon: ArrowRight,
+    id: "efatura",
+    title: "E-Fatura Paketi",
+    icon: Package,
     description:
-      "SAP sistemlerinizin farklı platformlara veya versiyonlara geçişinde uzman desteği.",
+      "Fatura yönetimi için kapsamlı çözümler. E-Fatura sisteminizi SAP ile entegre ederek dijital dönüşümünüzü hızlandırın.",
     features: [
-      "System Upgrade",
-      "Platform Migration",
-      "Database Migration",
-      "Unicode Conversion",
-      "OS/DB Migration",
-      "Data Archiving",
+      "E-Fatura Entegrasyonu",
+      "Otomatik Fatura Gönderimi",
+      "Fatura Takip ve Raporlama",
+      "GIB Entegrasyonu",
+      "Fatura Arşivleme",
+      "Teknik Destek",
     ],
   },
   {
-    id: "integration",
-    title: "Sistem Entegrasyonu",
-    icon: Zap,
+    id: "eirsaliye",
+    title: "E-İrsaliye Paketi",
+    icon: Package,
     description:
-      "SAP sistemlerinizi diğer kurumsal sistemlerle entegre ederek veri akışını optimize ediyoruz.",
+      "Lojistik süreçlerinizi dijitalleştirin. E-İrsaliye paketimiz ile sevkiyat süreçlerinizi optimize edin.",
     features: [
-      "PI/PO Integration",
-      "API Development",
-      "EDI Configuration",
-      "IDoc Processing",
-      "Web Services",
-      "Cloud Integration",
+      "E-İrsaliye Entegrasyonu",
+      "Sevkiyat Yönetimi",
+      "Lojistik Süreç Optimizasyonu",
+      "GIB Entegrasyonu",
+      "Raporlama ve Takip",
+      "Teknik Destek",
     ],
   },
   {
-    id: "security",
-    title: "Güvenlik & Uyumluluk",
-    icon: Shield,
+    id: "earsiv",
+    title: "E-Arşiv Paketi",
+    icon: Archive,
     description:
-      "Enterprise-grade güvenlik standartları ve sektör uyumluluk gereksinimlerini karşılayan çözümler.",
+      "Faturalarınızı güvenle arşivleyin. E-Arşiv paketimiz ile dijital arşivleme süreçlerinizi yönetin.",
     features: [
-      "Security Audit",
-      "Authorization Management",
-      "GRC Implementation",
-      "Compliance Reporting",
-      "Vulnerability Assessment",
-      "Security Best Practices",
+      "E-Arşiv Entegrasyonu",
+      "Dijital Arşivleme",
+      "Güvenli Saklama",
+      "Hızlı Erişim",
+      "Yasal Uyumluluk",
+      "Teknik Destek",
     ],
   },
   {
-    id: "cloud",
-    title: "SAP Cloud Platform",
-    icon: Cloud,
+    id: "edefter",
+    title: "E-Defter Paketi",
+    icon: BookOpen,
     description:
-      "SAP Cloud Platform ile modern, cloud-native uygulamalar geliştiriyoruz.",
+      "Defterlerinizi dijital ortamda tutun. E-Defter paketimiz ile muhasebe süreçlerinizi dijitalleştirin.",
     features: [
-      "Cloud Application Development",
-      "Integration Suite",
-      "API Management",
-      "Analytics Cloud",
-      "Mobile Services",
-      "Cloud Security",
-    ],
-  },
-  {
-    id: "analytics",
-    title: "SAP Analytics & BI",
-    icon: BarChart3,
-    description:
-      "İş zekası ve analitik çözümleri ile veri odaklı karar alma süreçlerinizi güçlendirin.",
-    features: [
-      "SAP BW/4HANA",
-      "SAP Analytics Cloud",
-      "Dashboard Development",
-      "Data Modeling",
-      "Predictive Analytics",
-      "Real-time Reporting",
-    ],
-  },
-  {
-    id: "support",
-    title: "SAP Destek & Bakım",
-    icon: Settings,
-    description:
-      "7/24 destek hizmeti ile SAP sistemlerinizin kesintisiz çalışmasını sağlıyoruz.",
-    features: [
-      "24/7 Support",
-      "Incident Management",
-      "System Monitoring",
-      "Performance Tuning",
-      "Regular Maintenance",
-      "Proactive Monitoring",
+      "E-Defter Entegrasyonu",
+      "Dijital Defter Yönetimi",
+      "Otomatik Kayıt",
+      "GIB Entegrasyonu",
+      "Yasal Uyumluluk",
+      "Teknik Destek",
     ],
   },
 ];
@@ -163,9 +114,15 @@ const services = [
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hizmetlerimiz | Aerisap - SAP & ABAP Danışmanlık",
+  title: "Hizmetlerimiz",
   description:
-    "SAP S/4HANA migration, ABAP geliştirme, Fiori uygulamaları ve daha fazlası. 15 yıllık deneyimimizle SAP ekosisteminde ihtiyacınız olan tüm hizmetleri sunuyoruz.",
+    "SAP Uygulama Geliştirme, SAP Danışmanlık ve Paket Çözümler (E-Fatura, E-İrsaliye, E-Arşiv, E-Defter). 150'den fazla firmada kullanılan çözümlerimizle dijital dönüşümünüzde yanınızdayız.",
+  openGraph: {
+    title: "Hizmetlerimiz | AERISAP",
+    description:
+      "SAP uygulama geliştirme, danışmanlık ve e-Çözüm paketleri. QNB eFinans iş birliğiyle güvenilir çözümler.",
+    url: "https://aerisap.com/hizmetler",
+  },
 };
 
 export default function ServicesPage() {
@@ -178,9 +135,9 @@ export default function ServicesPage() {
               Hizmetlerimiz
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              15 yılı aşkın SAP ve ABAP deneyimi ile kurumsal çözümler sunan
-              önde gelen danışmanlık firması olarak, ihtiyacınız olan tüm SAP
-              hizmetlerini tek çatı altında sunuyoruz.
+              2017'den beri SAP kurulum, geliştirme ve entegrasyon hizmetleri sunan 
+              AERISAP olarak, QNB eFinans iş birliğiyle 150'den fazla firmada kullanılan 
+              çözümlerimizle dijital dönüşümünüzde yanınızdayız.
             </p>
           </div>
         </Container>
@@ -194,8 +151,8 @@ export default function ServicesPage() {
               return (
                 <Card key={service.id} hover className="h-full flex flex-col">
                   <CardHeader>
-                    <div className="h-12 w-12 rounded-lg bg-sky-100 flex items-center justify-center mb-4">
-                      <Icon className="h-6 w-6 text-sky-600" />
+                    <div className="h-12 w-12 rounded-lg bg-copper-100 flex items-center justify-center mb-4">
+                      <Icon className="h-6 w-6 text-copper-600" />
                     </div>
                     <CardTitle className="text-2xl">{service.title}</CardTitle>
                   </CardHeader>
@@ -209,7 +166,7 @@ export default function ServicesPage() {
                           key={index}
                           className="flex items-start space-x-2 text-sm"
                         >
-                          <CheckCircle className="h-5 w-5 text-sky-500 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="h-5 w-5 text-copper-600 flex-shrink-0 mt-0.5" />
                           <span className="text-slate-700">{feature}</span>
                         </div>
                       ))}
@@ -232,7 +189,7 @@ export default function ServicesPage() {
 
       <Section spacing="lg" background="slate">
         <Container>
-          <div className="bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl p-8 sm:p-12 text-center text-white">
+          <div className="bg-gradient-to-br from-copper-600 to-copper-800 rounded-2xl p-8 sm:p-12 text-center text-white">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Projeniz İçin Hemen Teklif Alın
             </h2>
@@ -245,7 +202,7 @@ export default function ServicesPage() {
               href="/iletisim"
               variant="secondary"
               size="lg"
-              className="bg-white text-sky-600 hover:bg-slate-50"
+              className="bg-white text-copper-700 hover:bg-copper-50"
             >
               İletişime Geçin
             </Button>

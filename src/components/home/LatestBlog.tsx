@@ -48,7 +48,7 @@ export default function LatestBlog() {
               <Card hover className="h-full flex flex-col">
                 <CardContent className="p-6 flex flex-col flex-1">
                   <div className="mb-4">
-                    <span className="inline-block px-3 py-1 text-xs font-medium bg-sky-100 text-sky-700 rounded-full">
+                    <span className="inline-block px-3 py-1 text-xs font-medium bg-copper-100 text-copper-700 rounded-full">
                       {post.category}
                     </span>
                   </div>
@@ -69,7 +69,7 @@ export default function LatestBlog() {
                     </div>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="inline-flex items-center text-sky-500 hover:text-sky-600 font-medium text-sm transition-colors"
+                      className="inline-flex items-center text-copper-600 hover:text-copper-700 font-medium text-sm transition-colors"
                     >
                       Devamını Oku
                       <ArrowRight className="ml-1 h-4 w-4" />

@@ -9,9 +9,15 @@ import { blogPosts } from "@/lib/blog-data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog | Aerisap - SAP & ABAP İpuçları ve Rehberler",
+  title: "Blog",
   description:
-    "SAP dünyasındaki son gelişmeler, teknik ipuçları, en iyi uygulamalar ve rehberler. 15 yıllık deneyimimizden çıkardığımız dersler.",
+    "SAP Uygulama Geliştirme, SAP Danışmanlık, E-Fatura, E-İrsaliye, E-Arşiv ve E-Defter paket çözümleri hakkında teknik ipuçları, rehberler ve en iyi uygulamalar. AERISAP'ın deneyimlerinden çıkardığımız dersler.",
+  openGraph: {
+    title: "Blog | AERISAP - SAP & e-Çözümler Rehberleri",
+    description:
+      "SAP uygulama geliştirme, danışmanlık ve paket çözümler hakkında teknik rehberler ve ipuçları.",
+    url: "https://aerisap.com/blog",
+  },
 };
 
 export default function BlogPage() {
@@ -39,7 +45,7 @@ export default function BlogPage() {
               <Card key={post.slug} hover className="h-full flex flex-col">
                 <CardContent className="p-6 flex flex-col flex-1">
                   <div className="mb-4">
-                    <span className="inline-block px-3 py-1 text-xs font-medium bg-sky-100 text-sky-700 rounded-full">
+                    <span className="inline-block px-3 py-1 text-xs font-medium bg-copper-100 text-copper-700 rounded-full">
                       {post.category}
                     </span>
                   </div>
@@ -60,7 +66,7 @@ export default function BlogPage() {
                     </div>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="inline-flex items-center text-sky-500 hover:text-sky-600 font-medium text-sm transition-colors"
+                      className="inline-flex items-center text-copper-600 hover:text-copper-700 font-medium text-sm transition-colors"
                     >
                       Devamını Oku
                       <ArrowRight className="ml-1 h-4 w-4" />

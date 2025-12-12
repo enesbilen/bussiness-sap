@@ -22,7 +22,7 @@ export default function CTA() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl p-8 sm:p-12 lg:p-16 text-center text-white relative overflow-hidden"
+          className="bg-gradient-to-br from-copper-600 to-copper-800 rounded-2xl p-8 sm:p-12 lg:p-16 text-center text-white relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-black/10" />
           <div className="relative z-10 max-w-3xl mx-auto">
@@ -40,9 +40,9 @@ export default function CTA() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg sm:text-xl mb-8 text-white/90 leading-relaxed"
             >
-              15 yıllık deneyimimiz ve uzman ekibimizle, SAP projelerinizde
-              başarıya ulaşmanız için buradayız. Ücretsiz danışmanlık için
-              hemen iletişime geçin.
+              2017'den beri SAP çözümleri sunan AERISAP olarak, QNB eFinans iş birliğiyle 
+              150'den fazla firmada kullanılan çözümlerimizle dijital dönüşümünüzde yanınızdayız. 
+              Ücretsiz danışmanlık için hemen iletişime geçin.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -55,25 +55,25 @@ export default function CTA() {
                 href="/iletisim"
                 variant="secondary"
                 size="lg"
-                className="bg-white text-sky-600 hover:bg-slate-50 group"
+                className="bg-white text-copper-700 hover:bg-copper-50 group"
               >
                 Ücretsiz Danışmanlık Alın
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               <div className="flex flex-col sm:flex-row gap-4 text-white/90">
                 <a
-                  href="tel:+902121234567"
+                  href="tel:+905333474633"
                   className="flex items-center justify-center space-x-2 hover:text-white transition-colors"
                 >
                   <Phone className="h-5 w-5" />
-                  <span className="text-sm font-medium">+90 (212) 123 45 67</span>
+                  <span className="text-sm font-medium">+90 533 347 46 33</span>
                 </a>
                 <a
-                  href="mailto:info@aerisap.com"
+                  href="mailto:turgut.bakir@aerisap.com"
                   className="flex items-center justify-center space-x-2 hover:text-white transition-colors"
                 >
                   <Mail className="h-5 w-5" />
-                  <span className="text-sm font-medium">info@aerisap.com</span>
+                  <span className="text-sm font-medium">turgut.bakir@aerisap.com</span>
                 </a>
               </div>
             </motion.div>

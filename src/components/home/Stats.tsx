@@ -13,10 +13,10 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { value: 15, label: "Yıllık Deneyim", suffix: "+" },
-  { value: 200, label: "Tamamlanan Proje", suffix: "+" },
-  { value: 50, label: "Mutlu Müşteri", suffix: "+" },
-  { value: 100, label: "Uzman Ekip", suffix: "%" },
+  { value: 7, label: "Yıllık Deneyim", suffix: "+" },
+  { value: 150, label: "Firmada Kullanılan Çözüm", suffix: "+" },
+  { value: 4, label: "Paket Çözüm", suffix: "" },
+  { value: 1, label: "SAP Geliştirme Ortağı", suffix: "" },
 ];
 
 
@@ -48,7 +48,7 @@ function Counter({ value, suffix }: { value: number; suffix?: string }) {
   }, [inView, value]);
 
   return (
-    <span ref={ref} className="text-5xl sm:text-6xl font-bold text-sky-500">
+    <span ref={ref} className="text-5xl sm:text-6xl font-bold text-copper-600">
       {displayValue}
       {suffix}
     </span>

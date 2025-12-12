@@ -12,19 +12,19 @@ import Button from "@/components/ui/Button";
 
 const services = [
   {
-    title: "SAP S/4HANA",
+    title: "SAP Uygulama Geliştirme",
     description:
-      "S/4HANA migration, implementasyon ve optimizasyon hizmetleri ile dijital dönüşümünüzü hızlandırın.",
+      "İşletmenizin ihtiyaçlarına özel SAP uygulamaları geliştiriyoruz. ABAP programlama ve özel çözümler ile iş süreçlerinizi optimize ediyoruz.",
   },
   {
-    title: "ABAP Geliştirme",
+    title: "SAP Danışmanlık",
     description:
-      "Custom SAP uygulamaları, report geliştirme ve sistem entegrasyonları için profesyonel ABAP hizmetleri.",
+      "Sistemlerinizin yapılandırması, entegrasyonu ve güncelleştirilmesi konusunda uzman danışmanlık hizmetleri sunuyoruz.",
   },
   {
-    title: "Fiori Uygulamaları",
+    title: "Paket Çözümler",
     description:
-      "Modern, kullanıcı dostu Fiori uygulamaları ile SAP deneyiminizi yeniden tanımlayın.",
+      "E-Fatura, E-İrsaliye, E-Arşiv ve E-Defter paket çözümlerimizle dijital dönüşümünüzü hızlandırın.",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function ServicesPreview() {
                   </p>
                   <Link
                     href="/hizmetler"
-                    className="inline-flex items-center text-sky-500 hover:text-sky-600 font-medium text-sm transition-colors"
+                    className="inline-flex items-center text-copper-600 hover:text-copper-700 font-medium text-sm transition-colors"
                   >
                     Detayları Görün
                     <ArrowRight className="ml-1 h-4 w-4" />
